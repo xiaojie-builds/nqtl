@@ -56,10 +56,18 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  /* Times New Roman before Georgia on purpose: Georgia defaults to old-style
+     figures, so if the webfont ever fails the numbers would sink below the
+     baseline while the letters stay put */
+  font-family: "Source Serif 4", "Times New Roman", Georgia, serif;
   font-size: 1.0625rem;
   line-height: 1.62;
   font-optical-sizing: auto;
+  /* Source Serif defaults to tabular figures, which leaves a wide gap around
+     every 1 — proportional lining figures sit correctly in running text.
+     lining-nums is explicit so no fallback font can drop the digits below
+     the baseline. */
+  font-variant-numeric: lining-nums proportional-nums;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -78,10 +86,10 @@ p:last-child { margin-bottom: 0; }
 img, svg { max-width: 100%; }
 img { display: block; }
 
-/* subscripts in chemical formulas must not push the line box open */
-sub, sup { font-size: 0.72em; line-height: 0; position: relative; vertical-align: baseline; }
-sub { bottom: -0.28em; }
-sup { top: -0.45em; }
+/* chemical subscripts: smaller and lowered, but the line box must not grow */
+sub, sup { font-size: 0.7em; line-height: 0; position: relative; vertical-align: baseline; }
+sub { bottom: -0.22em; }
+sup { top: -0.42em; }
 
 a { color: inherit; text-decoration-color: var(--rule-strong); text-underline-offset: 0.18em; }
 a:hover { text-decoration-color: var(--accent); color: var(--accent); }
@@ -593,13 +601,26 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 
 .profile {
   display: grid;
-  grid-template-columns: var(--label-col) minmax(0, 1fr);
+  /* the PI portrait is the one image that deserves more than the 170px
+     label column the rest of the page uses */
+  grid-template-columns: minmax(var(--label-col), 260px) minmax(0, 1fr);
   gap: var(--label-gap);
   align-items: start;
   padding-bottom: var(--section-pad);
 }
 
 .profile > * { min-width: 0; }
+
+/* the PI portrait fills the narrow label column; cover keeps the 3:4 frame
+   even if a square headshot is dropped in later */
+.ph-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  background: var(--photo);
+}
 
 .profile h1 { font-size: clamp(1.875rem, 3.4vw, 2.5rem); }
 
@@ -801,26 +822,21 @@ img.instrument-thumb {
   height: auto;
   background: var(--photo);
 }
-.instrument-body { min-width: 0; }
+.instrument-body { min-width: 0; align-self: center; }
 
 .instrument h3 {
   font-size: 1.0625rem;
-  margin-bottom: 0.3rem;
-}
-
-.instrument-meta {
-  font-family: Archivo, sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: var(--mute);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.55rem;
 }
 
 .instrument-body > p {
   font-size: 0.9688rem;
   line-height: 1.55;
-  max-width: 58ch;
+  max-width: 64ch;
   color: #2A2E31;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .instrument-links {
@@ -839,6 +855,10 @@ img.instrument-thumb {
 @media (max-width: 560px) {
   .instrument { grid-template-columns: 1fr; gap: 0.9rem; }
   .instrument-thumb { max-width: 220px; }
+
+  /* justified text needs a wide measure; in one narrow column the gaps
+     between words get ugly, so go back to a ragged right edge here */
+  .instrument-body > p { text-align: left; hyphens: manual; }
 }
 
 /* ---------- contacts ---------- */
