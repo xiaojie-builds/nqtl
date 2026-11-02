@@ -78,6 +78,11 @@ p:last-child { margin-bottom: 0; }
 img, svg { max-width: 100%; }
 img { display: block; }
 
+/* subscripts in chemical formulas must not push the line box open */
+sub, sup { font-size: 0.72em; line-height: 0; position: relative; vertical-align: baseline; }
+sub { bottom: -0.28em; }
+sup { top: -0.45em; }
+
 a { color: inherit; text-decoration-color: var(--rule-strong); text-underline-offset: 0.18em; }
 a:hover { text-decoration-color: var(--accent); color: var(--accent); }
 
@@ -655,6 +660,80 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 
 .person { min-width: 0; }
 
+/* portraits: width-auto keeps the file's own ratio, no crop */
+.person img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--photo);
+}
+
+/* landscape portrait spans two tracks so it sits at roughly the same
+   height as the 3:4 cards in the same row */
+.person--wide { grid-column: span 2; }
+
+.person--wide h3 { margin-top: 0.85rem; }
+
+/* portrait files that are not already 3:4 get cropped to match the placeholders */
+.person--portrait img {
+  aspect-ratio: 3 / 4;
+  height: auto;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+/* full-width entry for members who come with a written introduction:
+   photo on the left, the whole paragraph on the right */
+.person--feature {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(200px, 300px) minmax(0, 1fr);
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+  align-items: start;
+}
+
+.person--feature img { height: auto; }
+
+/* ID-style portrait photos stand 400px tall against a 130px text block, so the
+   text centres on the photo instead of hugging its top edge and leaving a
+   hollow corner underneath */
+.person--feature.person--upright { align-items: center; }
+
+.person--feature h3 {
+  margin-top: 0.15rem;
+  font-size: 1.0625rem;
+}
+
+.person--feature .person-bio {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 0.9375rem;
+  line-height: 1.62;
+  color: #2A2E31;
+  max-width: 62ch;
+  margin-top: 0.6rem;
+}
+
+.person--feature .person-meta {
+  font-family: Archivo, sans-serif;
+  font-size: 0.8125rem;
+  margin-top: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .person--feature {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .person--feature img { max-width: 100%; }
+}
+
+/* consecutive full-width entries need a boundary, the grid gap alone is not enough */
+.person--feature + .person--feature {
+  border-top: 1px solid var(--rule);
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+}
+
 @media (max-width: 560px) {
   .people-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -707,7 +786,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 
 .instrument {
   display: grid;
-  grid-template-columns: 190px minmax(0, 1fr);
+  grid-template-columns: 250px minmax(0, 1fr);
   gap: 1.5rem;
   padding-block: 1.6rem;
   border-top: 1px solid var(--rule);
@@ -715,6 +794,13 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 .instrument:first-child { border-top: 0; padding-top: 0; }
 
 .instrument-thumb { width: 100%; }
+
+/* real photographs keep their own ratio; the 4:3 box is only for placeholders */
+img.instrument-thumb {
+  display: block;
+  height: auto;
+  background: var(--photo);
+}
 .instrument-body { min-width: 0; }
 
 .instrument h3 {
