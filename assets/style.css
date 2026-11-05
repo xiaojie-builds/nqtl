@@ -948,7 +948,17 @@ img.instrument-thumb {
 
 .contact-card .small { font-size: 0.8125rem; }
 
-.map-block { margin-top: 1.75rem; max-width: 760px; }
+.map-block {
+  display: block;
+  margin-top: 1.75rem;
+  max-width: 100%;
+}
+.map-block img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+}
 
 @media (max-width: 640px) {
   .contact-cols { grid-template-columns: 1fr; gap: 1.75rem; }

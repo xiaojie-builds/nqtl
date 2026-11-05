@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Instruments — Nanoelectronics and Quantum Transport Laboratory (NQTL)</title>
-<meta name="description" content="Instruments and facilities of Nanoelectronics and Quantum Transport Laboratory, Department of [Department], [University].">
+<meta name="description" content="Instruments and facilities of Nanoelectronics and Quantum Transport Laboratory, School of Integrated Circuits, Huazhong University of Science and Technology.">
   <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/source-serif-4-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body class="page-instruments">
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="site-header">
@@ -37,9 +37,41 @@
     <p class="intro">[What the group can do in-house, what is accessed through a shared facility, and who to ask about using it. Two or three sentences.]</p>
   </div>
 
-  <section class="section" style="border-top:0">
+  <section class="section">
     <div class="wrap section-grid">
-      <h2 class="section-label">Fabrication and growth</h2>
+      <h2 class="section-label section-label--strong">Materials growth</h2>
+      <div>
+        <!-- instruments:growth -->
+        <ul class="instrument-list">
+          <li class="instrument" data-instrument="cvd-tmd">
+            <img class="instrument-thumb" src="assets/instruments/cvd-tmd.jpg" alt="2D TMD CVD growth system" width="760" height="591" loading="lazy" decoding="async">
+            <div class="instrument-body">
+              <h3>2D TMD CVD growth system</h3>
+              <p>This system grows high-quality 2D TMD thin films such as WSe<sub>2</sub> and MoS<sub>2</sub>. It precisely controls temperature, gas flow and pressure to achieve uniform, crystalline layers for the TFT device research.</p>
+            </div>
+          </li>
+          <li class="instrument" data-instrument="beneq-ald">
+            <img class="instrument-thumb" src="assets/instruments/beneq-ald.jpg" alt="Beneq TFS 200 atomic layer deposition system" width="587" height="587" loading="lazy" decoding="async">
+            <div class="instrument-body">
+              <h3>Beneq TFS 200 atomic layer deposition system</h3>
+              <p>The laboratory is equipped with a TFS 200 atomic layer deposition (ALD) system manufactured by Beneq, Finland. The system’s reaction chamber can operate at temperatures of up to 500 °C. By adjusting the precursor chemistry, deposition parameters, and ALD cycle sequence, the system enables the controlled deposition of a variety of metal oxide thin films. In ALD, precursor reactions with the substrate surface or the surface of the previously deposited film are typically self-limiting, enabling precise control over film thickness and the fabrication of thin films with excellent uniformity and low surface roughness.</p>
+            </div>
+          </li>
+          <li class="instrument" data-instrument="lesker-pvd75">
+            <img class="instrument-thumb" src="assets/instruments/lesker-pvd75.jpg" alt="Kurt J. Lesker PRO Line PVD 75 sputtering system" width="760" height="570" loading="lazy" decoding="async">
+            <div class="instrument-body">
+              <h3>Kurt J. Lesker PRO Line PVD 75 sputtering system</h3>
+              <p>The Kurt J. Lesker PRO Line PVD 75 is a high-performance magnetic sputtering film deposition system. It is specifically utilized for depositing diverse thin films, including IGO, ITO, Te, Se, Ti, and Pt. Featuring a robust multi-chamber vacuum design and precise computerized process control, this equipment ensures high-quality coatings on various substrates. It serves as an essential tool for advanced materials science and semiconductor device research.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap section-grid">
+      <h2 class="section-label section-label--strong">Micro- and nanofabrication</h2>
       <div>
         <!-- instruments:fab -->
         <ul class="instrument-list">
@@ -50,11 +82,18 @@
               <p>This instrument is a Raith electron beam lithography system designed for high-resolution micro- and nanofabrication. Operating at an accelerating voltage of 30 kV, it delivers nanometer-precision exposure with stable, repeatable patterning and reliable performance, making it suitable for advanced research and nanoscale device fabrication.</p>
             </div>
           </li>
-          <li class="instrument" data-instrument="beneq-ald">
-            <img class="instrument-thumb" src="assets/instruments/beneq-ald.jpg" alt="Beneq TFS 200 atomic layer deposition system" width="587" height="587" loading="lazy" decoding="async">
+          <li class="instrument" data-instrument="shl-rie">
+            <img class="instrument-thumb" src="assets/instruments/shl-rie.jpg" alt="SHL 100μ-RIE plasma etching system" width="760" height="570" loading="lazy" decoding="async">
             <div class="instrument-body">
-              <h3>Beneq TFS 200 atomic layer deposition system</h3>
-              <p>The laboratory is equipped with a TFS 200 atomic layer deposition (ALD) system manufactured by Beneq, Finland. The system’s reaction chamber can operate at temperatures of up to 500 °C. By adjusting the precursor chemistry, deposition parameters, and ALD cycle sequence, the system enables the controlled deposition of a variety of metal oxide thin films. In ALD, precursor reactions with the substrate surface or the surface of the previously deposited film are typically self-limiting, enabling precise control over film thickness and the fabrication of thin films with excellent uniformity and low surface roughness.</p>
+              <h3>SHL 100μ-RIE etching system</h3>
+              <p>SHL 100μ-RIE is an etching system specially developed for etching two-dimensional (2D) materials. Its minimum plasma ignition power can be as low as 3 W, enabling low-damage, layer-by-layer etching of 2D materials. The process gases include CF<sub>4</sub>, O<sub>2</sub>, and Ar, and the system is suitable for etching samples on wafers smaller than 4 inches.</p>
+            </div>
+          </li>
+          <li class="instrument" data-instrument="lesker-ebeam">
+            <img class="instrument-thumb" src="assets/instruments/lesker-ebeam.jpg" alt="Kurt J. Lesker electron beam evaporation system with its control cabinet and water chiller" width="760" height="570" loading="lazy" decoding="async">
+            <div class="instrument-body">
+              <h3>Kurt J. Lesker Electron Beam Evaporation System</h3>
+              <p>High-vacuum electron beam evaporation deposition system by Kurt J. Lesker Company, featuring a stainless steel process chamber with multi-pocket e-beam gun and substrate rotation, rack-mounted control cabinet with touchscreen interface, and integrated recirculating water chiller. Suitable for thin-film deposition of metals and dielectrics in semiconductor, MEMS and optical coating applications.</p>
             </div>
           </li>
           <li class="instrument" data-instrument="ald-vacuum-system">
@@ -64,18 +103,11 @@
               <p>Atomic layer deposition (ALD) vacuum system grows films atomic layer by atomic layer through alternating precursor pulses into the reaction chamber and self-limiting surface reactions, enabling atomic-level thickness control, high conformality, and wafer-level uniformity. It is used for depositing high-k dielectrics and semiconductor films.</p>
             </div>
           </li>
-          <li class="instrument" data-instrument="shl-rie">
-            <img class="instrument-thumb" src="assets/instruments/shl-rie.jpg" alt="SHL 100μ-RIE plasma etching system" width="760" height="570" loading="lazy" decoding="async">
+          <li class="instrument" data-instrument="harrick-plasma-cleaner">
+            <img class="instrument-thumb" src="assets/instruments/harrick-plasma-cleaner.jpg" alt="Harrick Plasma PDC-002-HP plasma cleaner with the PLASMAFLO gas flow module stacked on top" width="760" height="570" loading="lazy" decoding="async">
             <div class="instrument-body">
-              <h3>SHL 100μ-RIE etching system</h3>
-              <p>SHL 100μ-RIE is an etching system specially developed for etching two-dimensional (2D) materials. Its minimum plasma ignition power can be as low as 3 W, enabling low-damage, layer-by-layer etching of 2D materials. The process gases include CF<sub>4</sub>, O<sub>2</sub>, and Ar, and the system is suitable for etching samples on wafers smaller than 4 inches.</p>
-            </div>
-          </li>
-          <li class="instrument" data-instrument="lesker-pvd75">
-            <img class="instrument-thumb" src="assets/instruments/lesker-pvd75.jpg" alt="Kurt J. Lesker PRO Line PVD 75 sputtering system" width="760" height="570" loading="lazy" decoding="async">
-            <div class="instrument-body">
-              <h3>Kurt J. Lesker PRO Line PVD 75 sputtering system</h3>
-              <p>The Kurt J. Lesker PRO Line PVD 75 is a high-performance magnetic sputtering film deposition system. It is specifically utilized for depositing diverse thin films, including IGO, ITO, Te, Se, Ti, and Pt. Featuring a robust multi-chamber vacuum design and precise computerized process control, this equipment ensures high-quality coatings on various substrates. It serves as an essential tool for advanced materials science and semiconductor device research.</p>
+              <h3>Harrick Plasma PDC-002-HP Plasma Cleaner (with PLASMAFLO PDC-FMG-2)</h3>
+              <p>Benchtop RF plasma cleaning system by Harrick Plasma, featuring an expandable plasma chamber with adjustable RF power levels (LOW/MED/HI), vacuum and pump controls, paired with the PLASMAFLO PDC-FMG-2 dual-channel gas flow module (oxygen/argon) for controlled process gas mixing. Widely used for surface activation, contaminant removal and hydrophilicity treatment of samples and microfluidic devices.</p>
             </div>
           </li>
           <li class="instrument" data-instrument="mbraun-glovebox">
@@ -85,13 +117,6 @@
               <p>The MBRAUN UNIlab pro glovebox workstation is capable of establishing a stable and well-regulated inert atmosphere inside the sealed chamber. It is widely adopted to carry out sample transfer, material processing and device fabrication operations for air-sensitive samples in the research of micro-nano devices.</p>
             </div>
           </li>
-          <li class="instrument" data-instrument="cvd-tmd">
-            <img class="instrument-thumb" src="assets/instruments/cvd-tmd.jpg" alt="2D TMD CVD growth system" width="760" height="591" loading="lazy" decoding="async">
-            <div class="instrument-body">
-              <h3>2D TMD CVD growth system</h3>
-              <p>This system grows high-quality 2D TMD thin films such as WSe<sub>2</sub> and MoS<sub>2</sub>. It precisely controls temperature, gas flow and pressure to achieve uniform, crystalline layers for the TFT device research.</p>
-            </div>
-          </li>
         </ul>
       </div>
     </div>
@@ -99,7 +124,7 @@
 
   <section class="section">
     <div class="wrap section-grid">
-      <h2 class="section-label">Characterisation</h2>
+      <h2 class="section-label section-label--strong">Device characterisation</h2>
       <div>
         <!-- instruments:char -->
         <ul class="instrument-list">
@@ -107,14 +132,28 @@
             <img class="instrument-thumb" src="assets/instruments/hv-probe-station.jpg" alt="Cascade Tesla probe station with a Keysight B1505A analyzer" width="760" height="489" loading="lazy" decoding="async">
             <div class="instrument-body">
               <h3>High-voltage probe station and test system</h3>
-              <p>The high-voltage probe station and test system combines a Cascade Tesla power probe station with a Keysight B1505A Power Device Analyzer. It achieves measurement precision down to 10 pA, supports high-voltage modules scalable to 10 kV, and handles currents up to 1500 A, making it ideal for high-voltage, high-current device testing.</p>
+              <p>The high-voltage probe station and test system uses a Cascade Tesla power probe station, operated together with the Keysight B1505A Power Device Analyzer listed below. Together they achieve measurement precision down to 10 pA, support high-voltage modules scalable to 10 kV, and handle currents up to 1500 A, making the setup ideal for high-voltage, high-current device testing.</p>
             </div>
           </li>
-          <li class="instrument" data-instrument="cryo-probe-b1500a">
-            <img class="instrument-thumb" src="assets/instruments/cryo-probe-b1500a.jpg" alt="Cryogenic probe station and Keysight B1500A semiconductor device parameter analyzer" width="429" height="322" loading="lazy" decoding="async">
+          <li class="instrument" data-instrument="keysight-b1505a">
+            <img class="instrument-thumb" src="assets/instruments/keysight-b1505a.jpg" alt="Keysight B1505A Power Device Analyzer / Curve Tracer" width="760" height="1013" loading="lazy" decoding="async">
             <div class="instrument-body">
-              <h3>Cryogenic probe station and Keysight B1500A parameter analyzer</h3>
-              <p>Our research group is equipped with Keysight B1500A semiconductor device parameter analyzers and cryogenic probe stations, enabling comprehensive electrical characterization of semiconductor devices. These facilities support current-voltage (I–V), capacitance-voltage (C–V), pulsed, and temperature-dependent measurements, providing advanced experimental capabilities for investigating device performance, carrier transport mechanisms, and reliability.</p>
+              <h3>Keysight B1505A Power Device Analyzer / Curve Tracer</h3>
+              <p>Precision benchtop solution for static characterization of power semiconductors, including SiC, GaN and IGBT devices. Supports measurements up to 10 kV / 1,500 A with high-resolution sourcing and detection of breakdown voltage, on-resistance, leakage current and gate characteristics. Equipped with the High Power Result Selector module; well-maintained and calibration-ready for laboratory and R&amp;D applications.</p>
+            </div>
+          </li>
+          <li class="instrument" data-instrument="cryo-vacuum-probe-station">
+            <img class="instrument-thumb" src="assets/instruments/cryo-vacuum-probe-station.jpg" alt="Cryogenic vacuum probe station with a top-mounted microscope and radial feedthrough ports" width="367" height="335" loading="lazy" decoding="async">
+            <div class="instrument-body">
+              <h3>Cryogenic Vacuum Probe Station</h3>
+              <p>Vacuum cryogenic probe station featuring a stainless steel chamber with multiple radial feedthrough ports, top-mounted optical microscope/camera, and vibration-isolated base platform. Enables wafer-level DC and RF electrical characterization of semiconductor devices and materials under controlled low-temperature and vacuum environments, suitable for condensed matter physics and device research.</p>
+            </div>
+          </li>
+          <li class="instrument" data-instrument="agilent-dsa90804a">
+            <img class="instrument-thumb" src="assets/instruments/agilent-dsa90804a.jpg" alt="Agilent Infiniium DSA90804A digital signal analyzer displaying four signal traces" width="721" height="543" loading="lazy" decoding="async">
+            <div class="instrument-body">
+              <h3>Agilent Infiniium DSA90804A Digital Signal Analyzer</h3>
+              <p>High-performance 8 GHz bandwidth, 40 GSa/s real-time sampling oscilloscope with four analog channels, designed for high-speed signal integrity, jitter and timing analysis in advanced digital designs. Features Infiniium user interface with segmented memory and comprehensive trigger/probe support. Well-suited for laboratory characterization of high-speed serial, RF and clock signals.</p>
             </div>
           </li>
           <li class="instrument" data-instrument="cypher-s-afm">
@@ -136,6 +175,7 @@
     </div>
   </section>
 
+
   <section class="section" id="access">
     <div class="wrap section-grid">
       <h2 class="section-label">Access</h2>
@@ -146,7 +186,7 @@
         </div>
         <div class="join" style="margin-top:1.75rem">
           <h2>Request time on an instrument</h2>
-          <p>Write to <a href="mailto:li@[university].edu">li@[university].edu</a> with the instrument, the sample and the dates you need.</p>
+          <p>Write to <a href="mailto:xfli@hust.edu.cn">xfli@hust.edu.cn</a> with the instrument, the sample and the dates you need.</p>
           <p class="more"><a class="action" href="contacts.html">All contact details</a></p>
         </div>
       </div>
@@ -158,11 +198,11 @@
   <div class="wrap footer-grid">
     <div>
       <p class="footer-name">Nanoelectronics and Quantum Transport Laboratory <span class="abbr">(NQTL)</span></p>
-      <p class="small">Department of [Department]<br>[University]<br>[Building, room number]<br>[City, Country]</p>
+      <p class="small">School of Integrated Circuits<br>Huazhong University of Science and Technology<br>Wuhan 430074, China</p>
     </div>
     <div>
       <p class="footer-h">Contact</p>
-      <p class="small"><a href="mailto:li@[university].edu">li@[university].edu</a><br>[+00 000 000 0000]</p>
+      <p class="small"><a href="mailto:xfli@hust.edu.cn">xfli@hust.edu.cn</a><br>[+00 000 000 0000]</p>
     </div>
     <div>
       <p class="footer-h">Pages</p>
