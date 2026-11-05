@@ -404,6 +404,48 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
   gap: var(--label-gap);
 }
 
+/* members page: the group heading sits above its grid instead of in a
+   left-hand label column */
+.page-members .section-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.35rem;
+}
+.page-instruments .section-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+  padding-top: 0.6rem;
+}
+.page-members .section-label {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  padding-top: 0;
+}
+/* instruments page: group headings are larger and centred, so they read as
+   section dividers rather than as one more line of text */
+.page-instruments .section-label {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-align: center;
+  padding-top: 0;
+}
+/* thin rules either side anchor the centred heading, so it reads as a
+   section divider instead of a stray line floating mid-page */
+.page-instruments .section-label::before,
+.page-instruments .section-label::after {
+  content: "";
+  flex: 0 1 150px;
+  height: 1px;
+  background: #D7DAD4;
+}
+
 .section-grid > * { min-width: 0; }
 
 .section-label {
@@ -422,6 +464,17 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
   font-size: 1.0625rem;
   font-weight: 600;
   letter-spacing: -0.01em;
+  padding-top: 0;
+}
+
+/* group headings on the instruments page sit at the same weight and
+   scale as the instrument names they introduce */
+.section-label--strong {
+  color: var(--accent);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
   padding-top: 0;
 }
 
@@ -672,7 +725,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 
 .people-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem 1.5rem;
   list-style: none;
   margin: 0;
@@ -706,10 +759,10 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 /* full-width entry for members who come with a written introduction:
    photo on the left, the whole paragraph on the right */
 .person--feature {
-  grid-column: 1 / -1;
+  grid-column: auto;
   display: grid;
-  grid-template-columns: minmax(200px, 300px) minmax(0, 1fr);
-  gap: clamp(1.25rem, 3vw, 2.25rem);
+  grid-template-columns: clamp(140px, 34%, 190px) minmax(0, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
   align-items: start;
 }
 
@@ -746,19 +799,20 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
     gap: 1rem;
   }
 
-  .person--feature img { max-width: 100%; }
+  .person--feature img { max-width: 260px; }
 }
 
 /* consecutive full-width entries need a boundary, the grid gap alone is not enough */
+/* two-up grid separates entries with the grid gap, so no rule needed */
 .person--feature + .person--feature {
-  border-top: 1px solid var(--rule);
-  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 0;
+  padding-top: 0;
 }
 
 @media (max-width: 560px) {
   .people-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.75rem 1rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 
@@ -808,13 +862,23 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 .instrument {
   display: grid;
   grid-template-columns: 250px minmax(0, 1fr);
-  gap: 1.5rem;
-  padding-block: 1.6rem;
-  border-top: 1px solid var(--rule);
+  gap: 1.75rem;
+  padding-block: 2.4rem;
+  border-top: 1px solid #E6E8E3;
 }
+.instrument:hover .instrument-thumb { filter: brightness(1.04) saturate(1.03); }
+.instrument h3 { transition: color .25s ease; }
+.instrument:hover h3 { color: #163A6B; }
 .instrument:first-child { border-top: 0; padding-top: 0; }
 
-.instrument-thumb { width: 100%; }
+.instrument-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 3px;
+  transition: filter .3s ease;
+}
 
 /* real photographs keep their own ratio; the 4:3 box is only for placeholders */
 img.instrument-thumb {
@@ -834,9 +898,8 @@ img.instrument-thumb {
   line-height: 1.55;
   max-width: 64ch;
   color: #2A2E31;
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
+  text-align: left;
+  hyphens: manual;
 }
 
 .instrument-links {
