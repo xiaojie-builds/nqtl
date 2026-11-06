@@ -479,6 +479,9 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
   padding-top: 0.35rem;
 }
 
+/* Year groups sit close together; the stacked section padding was too airy. */
+.page-publications .section { padding-block: 1.4rem 1.9rem; }
+
 .section-label--year {
   color: var(--accent);
   font-size: 1.0625rem;
