@@ -11,10 +11,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nanoelectronics and Quantum Transport Laboratory (NQTL)</title>
-<meta name="description" content="Nanoelectronics and Quantum Transport Laboratory, School of Integrated Circuits, Huazhong University of Science and Technology. Research on [research areas].">
+<meta name="description" content="Nanoelectronics and Quantum Transport Laboratory, School of Integrated Circuits, Huazhong University of Science and Technology. Research on 2D semiconductor transistors, ferroelectric devices and high-voltage oxide TFTs.">
   <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/source-serif-4-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/home.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -22,6 +23,8 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/hust-wordmark.png" alt="Huazhong University of Science and Technology" width="400" height="94">
+      <span class="brand-divider" aria-hidden="true"></span>
       <span class="brand-name">Li's Research Group</span>
     </a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
@@ -39,175 +42,84 @@
 </header>
 
 <main id="main">
-
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <!-- Background watermark: the wafer schematic from the original design,
-         drawn in white and dropped to a few percent opacity. Delete the whole
-         <svg> if you would rather run the hero plain. -->
-    <svg class="hero-wafer" viewBox="0 0 520 520" aria-hidden="true" focusable="false">
-      <defs>
-        <pattern id="dies" x="243" y="243" width="38" height="38" patternUnits="userSpaceOnUse">
-          <rect width="34" height="34" fill="#FFFFFF" opacity="0.38"/>
-        </pattern>
-        <clipPath id="waferClip">
-          <path d="M183.8 496 A248 248 0 1 1 336.2 496 Z"/>
-        </clipPath>
-      </defs>
-
-      <g clip-path="url(#waferClip)">
-        <rect width="520" height="520" fill="url(#dies)"/>
-      </g>
-
-      <path d="M183.8 496 A248 248 0 1 1 336.2 496 Z" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
-
-      <g stroke="#FFFFFF" stroke-width="1.5">
-        <line x1="260" y1="14" x2="260" y2="496"/>
-        <line x1="12" y1="260" x2="508" y2="260"/>
-      </g>
-
-      <rect x="243" y="243" width="34" height="34" fill="#FFFFFF"/>
-
-      <g clip-path="url(#waferClip)">
-        <rect class="scan" x="-1" y="0" width="2" height="520" fill="#FFFFFF"/>
-      </g>
-    </svg>
-
-    <div class="wrap hero-inner">
-      <p class="hero-welcome">Welcome to the</p>
-      <h1>Nanoelectronics and Quantum Transport Laboratory <span class="h1-abbr">(NQTL)</span></h1>
-      <p class="hero-affil">School of Integrated Circuits<br>Huazhong University of Science and Technology</p>
-      <p class="hero-lead">We aim to explore [advanced materials], [novel device concepts] and [cutting-edge physics] to enable the next generation of electronic technologies.</p>
-      <p class="hero-open">PhD, MSc and postdoc positions are open — <a href="members.html#openings">see open positions</a></p>
-      <p class="hero-cta"><a class="btn" href="members.html">Meet the team <span class="arrow" aria-hidden="true">→</span></a></p>
+    <div class="hero-carousel" id="hero-carousel" aria-roledescription="carousel" aria-label="Laboratory facilities">
+      <div class="hc-slide is-active" data-label="Materials growth"></div>
+      <div class="hc-slide" data-label="Micro- and nanofabrication"></div>
+      <div class="hc-slide" data-label="Device characterization"></div>
+      <p class="hc-caption"><span class="hc-label">Materials growth</span></p>
+      <div class="hc-dots" role="tablist" aria-label="Choose slide">
+        <button class="hc-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Materials growth"></button>
+        <button class="hc-dot" type="button" role="tab" aria-selected="false" aria-label="Micro- and nanofabrication"></button>
+        <button class="hc-dot" type="button" role="tab" aria-selected="false" aria-label="Device characterization"></button>
+      </div>
     </div>
-  </section>
 
-  <!-- ============ ABOUT ============ -->
-  <section class="section">
-    <div class="wrap section-grid">
-      <h2 class="section-label">About</h2>
+  <div class="home-wrap">
+    <div class="home-grid">
       <div>
-        <div class="prose">
-          <p>The group was founded in [year] and sits in the School of Integrated Circuits at Huazhong University of Science and Technology. We work on [two or three research directions], with a shared interest in [the problem that connects them].</p>
-          <p>Our approach combines [method one], [method two] and [method three]. We publish in [fields or venues] and work with [collaborators, industry partners, or other groups].</p>
+        <div class="home-head">
+          <p class="home-eyebrow">Quantum nanoscience &middot; School of Integrated Circuits</p>
+          <h1 class="home-h1">Nanoelectronics and Quantum Transport Laboratory <span class="abbr">(NQTL)</span></h1>
+          <p class="home-affil">Huazhong University of Science and Technology &middot; Wuhan National High Magnetic Field Center &middot; Wuhan, China</p>
+          <p class="home-lead">We study how electrons move through atomically thin semiconductors, and build the devices that follow: 16-nm-channel WSe<sub>2</sub> transistors approaching the ballistic limit, annealing-free ferroelectric FETs, and oxide thin-film devices that hold off more than a kilovolt. The group covers the whole chain &mdash; material growth, nanofabrication, and electrical characterization down to cryogenic temperatures.</p>
         </div>
-        <dl class="facts">
-          <dt>Established</dt><dd>[Year]</dd>
-          <dt>Location</dt><dd>School of Integrated Circuits, Huazhong University of Science and Technology</dd>
-          <dt>Group size</dt><dd>[Number] researchers, [number] alumni</dd>
-          <dt>Contact</dt><dd><a href="mailto:xfli@hust.edu.cn">xfli@hust.edu.cn</a></dd>
-        </dl>
-      </div>
-    </div>
-  </section>
 
-  <!-- ============ RESEARCH ============ -->
-  <section class="section">
-    <div class="wrap section-grid">
-      <h2 class="section-label">Research areas</h2>
-      <div>
-        <ul class="research-list">
-          <li>
-            <h3>[Research direction one]</h3>
-            <p>[One sentence: the problem, the approach, and what it enables.]</p>
-          </li>
-          <li>
-            <h3>[Research direction two]</h3>
-            <p>[One sentence: the problem, the approach, and what it enables.]</p>
-          </li>
-          <li>
-            <h3>[Research direction three]</h3>
-            <p>[One sentence: the problem, the approach, and what it enables.]</p>
-          </li>
-          <li>
-            <h3>[Research direction four]</h3>
-            <p>[One sentence: the problem, the approach, and what it enables.]</p>
-          </li>
-        </ul>
-        <p class="more"><a class="action" href="research.html">All research areas</a></p>
-      </div>
-    </div>
-  </section>
+        <section class="home-section">
+          <h2>Research</h2>
+          <article class="research-item">
+            <h3><a href="research.html">2D semiconductor transistors</a></h3>
+            <p>CVD-grown monolayer WSe<sub>2</sub> and WS<sub>2</sub>, channels scaled to 16 nm, and p-type contacts engineered to reach record on-current at a ballistic efficiency of 81%.</p>
+          </article>
+          <article class="research-item">
+            <h3><a href="research.html">Ferroelectric and oxide-semiconductor devices</a></h3>
+            <p>Annealing-free wurtzite ferroelectric FETs and ALD InGaO transistors for neuromorphic computing and capacitorless DRAM, with defect engineering for long retention.</p>
+          </article>
+          <article class="research-item">
+            <h3><a href="research.html">High-voltage oxide thin-film devices</a></h3>
+            <p>BEOL-compatible InGaO TFTs with breakdown voltages above 1.3 kV, and top-gate architectures that improve the on-resistance versus breakdown trade-off.</p>
+          </article>
+          <p class="home-more"><a href="research.html">Full research programme &rarr;</a></p>
+        </section>
 
-  <!-- ============ SELECTED PUBLICATIONS ============ -->
-  <section class="section">
-    <div class="wrap section-grid">
-      <h2 class="section-label">Selected publications</h2>
-      <div>
-        <ul class="entries">
-          <li class="entry">
-            <p class="entry-authors">[A. Author, B. Author and C. Author]</p>
-            <h3 class="entry-title">[Title of the paper, in sentence case]</h3>
-            <p class="entry-venue"><em>[Journal Name]</em>, vol. [X], no. [Y], pp. [000–000], [year].</p>
-            <p class="entry-links"><a href="#">PDF</a></p>
-          </li>
-          <li class="entry">
-            <p class="entry-authors">[A. Author, B. Author and C. Author]</p>
-            <h3 class="entry-title">[Title of the paper, in sentence case]</h3>
-            <p class="entry-venue"><em>[Conference Name]</em>, [year].</p>
-            <p class="entry-links"><a href="#">PDF</a></p>
-          </li>
-          <li class="entry">
-            <p class="entry-authors">[A. Author, B. Author and C. Author]</p>
-            <h3 class="entry-title">[Title of the paper, in sentence case]</h3>
-            <p class="entry-venue"><em>[Journal Name]</em>, vol. [X], no. [Y], pp. [000–000], [year].</p>
-            <p class="entry-links"><a href="#">PDF</a></p>
-          </li>
-        </ul>
-        <p class="more"><a class="action" href="publications.html">All publications</a></p>
-      </div>
-    </div>
-  </section>
+        <section class="home-section">
+          <h2>Instruments</h2>
+          <p class="news-text">In-house fabrication and characterization: e-beam lithography, atomic layer deposition, RIE etching, magnetron sputtering, high-voltage and cryogenic probe stations, and AFM.</p>
+          <p class="home-more"><a href="instruments.html">See the full instrument list &rarr;</a></p>
+        </section>
 
-  <!-- ============ INSTRUMENTS ============ -->
-  <section class="section">
-    <div class="wrap section-grid">
-      <h2 class="section-label">Instruments</h2>
-      <div>
-        <ul class="instrument-list">
-          <li class="instrument">
-            <div class="ph ph--flat instrument-thumb">Photo</div>
-            <div class="instrument-body">
-              <h3>[Instrument name]</h3>
-              <p class="instrument-meta">[Make and model] &middot; [Building, room]</p>
-              <p>[What it does, in one line, and what the group uses it for.]</p>
-            </div>
-          </li>
-          <li class="instrument">
-            <div class="ph ph--flat instrument-thumb">Photo</div>
-            <div class="instrument-body">
-              <h3>[Instrument name]</h3>
-              <p class="instrument-meta">[Make and model] &middot; [Building, room]</p>
-              <p>[What it does, in one line, and what the group uses it for.]</p>
-            </div>
-          </li>
-          <li class="instrument">
-            <div class="ph ph--flat instrument-thumb">Photo</div>
-            <div class="instrument-body">
-              <h3>[Instrument name]</h3>
-              <p class="instrument-meta">[Make and model] &middot; [Building, room]</p>
-              <p>[What it does, in one line, and what the group uses it for.]</p>
-            </div>
-          </li>
-        </ul>
-        <p class="more"><a class="action" href="instruments.html">All instruments</a></p>
+        <section class="home-section">
+          <h2>Openings</h2>
+          <p class="news-text">PhD and postdoc positions are open. We look for people with a background in device physics, 2D materials or nanofabrication &mdash; and, more than a specific degree, evidence that you can build something and finish it.</p>
+          <p class="home-more"><a href="members.html#openings">Open positions and how to apply &rarr;</a></p>
+        </section>
       </div>
-    </div>
-  </section>
 
-  <!-- ============ JOIN ============ -->
-  <section class="section" id="join">
-    <div class="wrap section-grid">
-      <h2 class="section-label">Join us</h2>
-      <div class="join">
-        <h2>We are looking for [PhD students and postdocs]</h2>
-        <p>Applicants should have a background in [field one] or [field two]. Send a CV and a short statement of what you want to work on to <a href="mailto:xfli@hust.edu.cn">xfli@hust.edu.cn</a>.</p>
-        <p class="more"><a class="action" href="members.html#openings">What we offer and how to apply</a></p>
-      </div>
-    </div>
-  </section>
+      <aside class="side">
+        <div class="side-block">
+          <h2>News</h2>
+          <ul class="news-list">
+            <li><span class="news-date">2026</span><p class="news-text">Ballistic p-type WSe<sub>2</sub> transistors with a contact resistance of 104 &Omega;&middot;&mu;m published in <em>Nature Communications</em>.</p></li>
+            <li><span class="news-date">2026</span><p class="news-text">Annealing-free wurtzite ferroelectric FETs published in <em>Nature Communications</em>.</p></li>
+            <li><span class="news-date">2026</span><p class="news-text">p-type monolayer WSe<sub>2</sub> transistors published in <em>Nature Electronics</em>.</p></li>
+            <li><span class="news-date">2026</span><p class="news-text">16-nm WSe<sub>2</sub> pFET with a record 1532 &mu;A/&mu;m on-current presented at the VLSI Symposium.</p></li>
+            <li><span class="news-date">2026</span><p class="news-text">InGaO high-voltage TFT reaches a breakdown voltage of 1348 V.</p></li>
+          </ul>
+        </div>
 
+        <div class="side-block">
+          <h2>Contact</h2>
+          <p class="news-text"><a href="mailto:xfli@hust.edu.cn">xfli@hust.edu.cn</a><br>Wuhan National High Magnetic Field Center<br>1037 Luoyu Road, Wuhan 430074, China</p>
+          <p class="home-more" style="margin-top:.6rem"><a href="contacts.html">All contact details &rarr;</a></p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="logo-wall">
+      <span>Huazhong University of Science and Technology</span>
+      <span>School of Integrated Circuits</span>
+      <span>Wuhan National High Magnetic Field Center</span>
+    </div>
+  </div>
 </main>
 
 <footer class="site-footer">

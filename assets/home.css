@@ -1,0 +1,205 @@
+/* ============================================================
+   NQTL 主页改版 — 参考 QuSpin / Otte / Allen Lab 模板
+   文字流左栏 + News 右栏 + 机构 logo 墙
+   ============================================================ */
+
+.home-wrap { max-width: 1200px; margin-inline: auto; padding-inline: 1.5rem; }
+
+/* 顶部标题区 */
+.home-head { padding: 0 0 2rem; }
+.home-eyebrow {
+  font-family: Archivo, sans-serif;
+  font-size: .75rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #8a8a86;
+  margin: 0 0 1rem;
+}
+.home-h1 {
+  font-family: Archivo, sans-serif;
+  font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+  line-height: 1.12;
+  letter-spacing: -.025em;
+  font-weight: 650;
+  margin: 0 0 .6rem;
+  max-width: 26ch;
+}
+.home-h1 .abbr {
+  color: var(--accent);
+  font-weight: inherit;
+  letter-spacing: inherit;
+  white-space: nowrap;
+}
+.home-affil { font-size: .95rem; color: #6d6b66; margin: 0 0 1.4rem; }
+.home-lead {
+  max-width: 62ch;
+  font-size: 1.06rem;
+  line-height: 1.62;
+  color: #2b2a25;
+  margin: 0;
+}
+
+/* 两栏主体 */
+.home-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 4rem;
+  align-items: start;
+  padding-top: 3.5rem;
+  padding-bottom: 4rem;
+}
+@media (max-width: 980px) {
+  .home-grid { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+/* 左栏小节 */
+.home-section { padding: 1.6rem 0; border-top: 1px solid #eceae4; }
+.home-head + .home-section { border-top: 0; padding-top: .4rem; }
+.home-section h2 {
+  font-family: Archivo, sans-serif;
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #8a8a86;
+  font-weight: 600;
+  margin: 0 0 1.1rem;
+}
+.research-item { margin-bottom: 1.6rem; }
+.research-item:last-child { margin-bottom: 0; }
+.research-item h3 {
+  font-family: Archivo, sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: -.01em;
+  margin: 0 0 .35rem;
+}
+.research-item h3 a { color: #17160f; text-decoration: none; }
+.research-item h3 a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.research-item p { font-size: .95rem; line-height: 1.6; color: #4d4b45; margin: 0; max-width: 66ch; }
+
+.home-more {
+  font-family: Archivo, sans-serif;
+  font-size: .8rem;
+  letter-spacing: .02em;
+  margin-top: .8rem;
+}
+.home-more a { color: #1E4B8C; text-decoration: none; border-bottom: 1px solid rgba(30,75,140,.35); }
+.home-more a:hover { border-bottom-color: #1E4B8C; }
+
+/* 右栏 */
+.side { position: sticky; top: 5.5rem; }
+.side-block { margin-bottom: 2.4rem; }
+.side-block h2 {
+  font-family: Archivo, sans-serif;
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #8a8a86;
+  margin: 0 0 .9rem;
+}
+.news-list { list-style: none; margin: 0; padding: 0; }
+.news-list li {
+  display: grid;
+  grid-template-columns: 4.2rem 1fr;
+  column-gap: .9rem;
+  padding: .62rem 0;
+  border-top: 1px solid #eceae4;
+}
+.news-list li:first-child { border-top: 0; padding-top: 0; }
+.news-date {
+  font-family: Archivo, sans-serif;
+  font-size: .72rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #9a9892;
+  padding-top: .12rem;
+}
+.news-text { font-size: .92rem; line-height: 1.5; color: #2b2a25; margin: 0; }
+.news-text a { color: inherit; text-decoration: none; }
+.news-text a:hover { color: #1E4B8C; }
+
+.hiring {
+  border: 1px solid #dcd8cf;
+  border-left: 3px solid #1E4B8C;
+  padding: .95rem 1.1rem;
+  background: #fbfaf7;
+}
+.hiring p { font-size: .9rem; line-height: 1.55; margin: 0 0 .5rem; color: #4d4b45; }
+.hiring p:last-child { margin-bottom: 0; }
+.hiring a { color: #1E4B8C; }
+
+/* 底部 logo 墙 */
+.logo-wall {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem 2.4rem;
+  align-items: center;
+  padding: 1.8rem 0 2.6rem;
+  border-top: 1px solid #eceae4;
+}
+.logo-wall span {
+  font-family: Archivo, sans-serif;
+  font-size: .74rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #9a9892;
+}
+/* ---- facility carousel (placeholder slides until photos arrive) ---- */
+.hero-carousel {
+  position: relative;
+  max-width: 1200px;
+  margin: 1.75rem auto 0;
+  height: clamp(180px, 22vw, 270px);
+  overflow: hidden;
+  border-radius: 4px;
+  background: #16283F;
+}
+.hc-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .9s ease;
+}
+.hc-slide.is-active { opacity: 1; }
+.hc-slide:nth-child(1) { background: linear-gradient(115deg, #16305A, #2E5E9E 55%, #5C8CC4); }
+.hc-slide:nth-child(2) { background: linear-gradient(115deg, #1B3A63, #2B5A8C 55%, #4E82B4); }
+.hc-slide:nth-child(3) { background: linear-gradient(115deg, #12253F, #1E4B8C 55%, #3A6FB0); }
+.hc-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 78% 28%, rgba(255,255,255,.16), transparent 46%),
+              repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 72px);
+}
+.hc-caption {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1.1rem;
+  margin: 0;
+  color: #fff;
+  font-family: Archivo, sans-serif;
+  font-size: .9rem;
+  letter-spacing: .02em;
+  z-index: 2;
+}
+.hc-dots {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.35rem;
+  display: flex;
+  gap: .55rem;
+  z-index: 2;
+}
+.hc-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.42);
+  cursor: pointer;
+}
+.hc-dot.is-active { background: #fff; }
+.hc-dot:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .hc-slide { transition: none; }
+}

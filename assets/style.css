@@ -161,9 +161,22 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 }
 
 .brand {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
   text-decoration: none;
   color: var(--ink);
+}
+.brand-mark {
+  display: block;
+  width: auto;
+  height: 34px;
+}
+.brand-divider {
+  flex: none;
+  width: 1px;
+  height: 26px;
+  background: var(--rule);
 }
 .brand:hover { color: var(--ink); }
 .brand-name {
@@ -956,6 +969,7 @@ img/* height stays out of this rule so the 4:3 aspect-ratio wins; align-self
   border-radius: 4px;
   padding: 1.6rem 1.75rem;
 }
+.contact-panel + .contact-panel { margin-top: 1.25rem; }
 .contact-panel--wide { margin-top: 1.25rem; }
 .panel-title {
   font-size: 1rem;
@@ -1203,4 +1217,14 @@ img/* height stays out of this rule so the 4:3 aspect-ratio wins; align-self
   .hero-welcome, .hero-affil, .hero-lead { color: var(--mute); }
   .btn { border: 1px solid var(--ink); }
   body { background: #fff; font-size: 11pt; }
+}
+/* narrow screens: keep the university wordmark legible without crowding the menu */
+@media (max-width: 640px) {
+  .brand { gap: 0.6rem; }
+  .brand-mark { height: 27px; }
+  .brand-divider { display: none; }
+  .brand-name { font-size: 0.9375rem; }
+}
+@media (max-width: 380px) {
+  .brand-name { display: none; }
 }
