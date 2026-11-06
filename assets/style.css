@@ -732,6 +732,10 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 }
 .contact-list dt { color: var(--mute); }
 .contact-list dd { margin: 0; word-break: break-word; }
+/* PI contact details read as plain text; underline only on hover/focus. */
+.contact-list a { text-decoration: none; }
+.contact-list a:hover,
+.contact-list a:focus-visible { text-decoration: underline; text-decoration-color: var(--accent); }
 
 @media (max-width: 780px) {
   .profile { grid-template-columns: 1fr; }
