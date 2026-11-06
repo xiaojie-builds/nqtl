@@ -17,7 +17,7 @@
     }
   });
 })();
-/* Facility carousel: cross-fade every 2s, pause on hover/focus, respect reduced motion */
+/* Facility carousel: cross-fade every 3s, pause on hover/focus, respect reduced motion */
 (function () {
   var root = document.getElementById('hero-carousel');
   if (!root) return;
@@ -38,7 +38,7 @@
     if (label) label.textContent = captions[i];
   }
   function stop() { if (timer) clearInterval(timer); timer = null; }
-  function start() { stop(); if (!reduce) timer = setInterval(function () { show(i + 1); }, 2000); }
+  function start() { stop(); if (!reduce) timer = setInterval(function () { show(i + 1); }, 3000); }
 
   dots.forEach(function (d, k) {
     d.addEventListener('click', function () { show(k); start(); });
