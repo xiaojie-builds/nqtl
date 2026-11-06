@@ -427,12 +427,12 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 .page-instruments .section-label {
   display: flex;
   align-items: center;
-  gap: 1.4rem;
-  font-size: 1.25rem;
+  gap: 1.75rem;
+  font-size: 1.75rem;
   font-weight: 600;
   color: var(--ink);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
   text-align: center;
   padding-top: 0;
 }
@@ -441,7 +441,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 .page-instruments .section-label::before,
 .page-instruments .section-label::after {
   content: "";
-  flex: 0 1 150px;
+  flex: 1 1 auto;
   height: 1px;
   background: #D7DAD4;
 }
@@ -856,24 +856,34 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
   list-style: none;
   margin: 0;
   padding: 0;
-  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .instrument {
   display: grid;
-  grid-template-columns: 250px minmax(0, 1fr);
-  gap: 1.75rem;
-  padding-block: 2.4rem;
-  border-top: 1px solid #E6E8E3;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 2rem;
+  padding: 1.75rem;
+  max-width: 880px;
+  background: #FFFFFF;
+  border: 1px solid #E3E6E0;
+  border-radius: 4px;
+  transition: box-shadow .25s ease, border-color .25s ease;
+}
+.instrument:hover {
+  box-shadow: 0 3px 16px rgba(22, 24, 27, .07);
+  border-color: #D2D6CF;
 }
 .instrument:hover .instrument-thumb { filter: brightness(1.04) saturate(1.03); }
 .instrument h3 { transition: color .25s ease; }
 .instrument:hover h3 { color: #163A6B; }
-.instrument:first-child { border-top: 0; padding-top: 0; }
+.instrument:first-child { border-top: 1px solid #E3E6E0; padding-top: 1.75rem; }
 
 .instrument-thumb {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 225px;
   object-fit: cover;
   object-position: center;
   border-radius: 3px;
@@ -881,9 +891,10 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 }
 
 /* real photographs keep their own ratio; the 4:3 box is only for placeholders */
-img.instrument-thumb {
+img/* height stays out of this rule so the 4:3 aspect-ratio wins; align-self
+   stops the grid row from stretching the photo past that ratio */
+.instrument-thumb {
   display: block;
-  height: auto;
   background: var(--photo);
 }
 .instrument-body { min-width: 0; align-self: center; }
@@ -896,7 +907,7 @@ img.instrument-thumb {
 .instrument-body > p {
   font-size: 0.9688rem;
   line-height: 1.55;
-  max-width: 64ch;
+  max-width: 62ch;
   color: #2A2E31;
   text-align: left;
   hyphens: manual;
@@ -917,7 +928,7 @@ img.instrument-thumb {
 
 @media (max-width: 560px) {
   .instrument { grid-template-columns: 1fr; gap: 0.9rem; }
-  .instrument-thumb { max-width: 220px; }
+  .instrument-thumb { height: auto; max-width: 220px; }
 
   /* justified text needs a wide measure; in one narrow column the gaps
      between words get ugly, so go back to a ragged right edge here */
@@ -926,17 +937,114 @@ img.instrument-thumb {
 
 /* ---------- contacts ---------- */
 
+/* contacts page rebuilt after the TherMAX-IC reference: label/value table,
+   a narrow side column, and a panel for measurement requests */
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+.contact-side { display: grid; gap: 1.25rem; }
+.contact-panel {
+  background: #FFFFFF;
+  border: 1px solid #E3E6E0;
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  padding: 1.6rem 1.75rem;
+}
+.contact-panel--wide { margin-top: 1.25rem; }
+.panel-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+  margin: 0 0 1rem;
+}
+.contact-table {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 0.8rem 1.25rem;
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+.contact-table dt {
+  font-family: Archivo, sans-serif;
+  font-size: 0.8125rem;
+  color: var(--mute);
+  padding-top: 0.12rem;
+}
+.contact-table dd { margin: 0; color: #2A2E31; }
+.contact-panel p {
+  font-size: 0.9375rem;
+  line-height: 1.62;
+  color: #2A2E31;
+  margin: 0;
+}
+.contact-panel p + p { margin-top: 0.65rem; }
+.contact-panel .small { font-size: 0.8125rem; color: var(--mute); }
+.checklist {
+  margin: 0.9rem 0 0;
+  padding-left: 1.15rem;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: #2A2E31;
+}
+.checklist li { margin-bottom: 0.25rem; }
+.location-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+.location-text h3 {
+  font-size: 0.9375rem;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+}
+.location-text h3 + p {
+  margin: 0 0 1.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.62;
+  color: #2A2E31;
+}
+.page-contacts .page-head .intro { margin-left: 0; }
+.page-contacts .section-label {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  padding-top: 0;
+  margin-bottom: 1.5rem;
+}
+
 .contact-cols {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.25rem 2.5rem;
-  max-width: 760px;
+  gap: 1.25rem;
 }
 
+.contact-card {
+  background: #FFFFFF;
+  border: 1px solid #E3E6E0;
+  border-radius: 4px;
+  padding: 1.5rem;
+  transition: box-shadow .25s ease, border-color .25s ease;
+}
+.contact-card:hover {
+  box-shadow: 0 3px 16px rgba(22, 24, 27, .07);
+  border-color: #D2D6CF;
+}
 .contact-card h3 {
   font-size: 0.9375rem;
   font-weight: 600;
   margin-bottom: 0.55rem;
+}.contact-card h3 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.7rem;
 }
 
 .contact-card p {
@@ -962,6 +1070,11 @@ img.instrument-thumb {
 
 @media (max-width: 640px) {
   .contact-cols { grid-template-columns: 1fr; gap: 1.75rem; }
+  .contact-layout, .location-grid { grid-template-columns: 1fr; }
+  .location-grid { gap: 1.75rem; }
+  .contact-table { grid-template-columns: 1fr; gap: 0.2rem; }
+  .contact-table dt { margin-top: 0.7rem; }
+  .contact-table dt:first-child { margin-top: 0; }
 }
 
 /* ---------- research themes ---------- */
