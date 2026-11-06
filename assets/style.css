@@ -1035,9 +1035,12 @@ img/* height stays out of this rule so the 4:3 aspect-ratio wins; align-self
 .checklist li { margin-bottom: 0.25rem; }
 .location-grid {
   display: grid;
-  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+  /* The map is supporting information: keep it at a readable size and let
+     the leftover column stay empty rather than stretching to full width. */
+  grid-template-columns: minmax(0, 320px) minmax(0, 560px);
   gap: 2.5rem;
   align-items: start;
+  justify-content: start;
 }
 .location-text h3 {
   font-size: 0.9375rem;
