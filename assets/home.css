@@ -203,3 +203,53 @@
 @media (prefers-reduced-motion: reduce) {
   .hc-slide { transition: none; }
 }
+/* ---- home-only deep-blue brand bar (matches the university banner reference) ---- */
+.site-header--home { background: #004098; border-bottom: 0; }
+.site-header--home .wrap { padding-block: 0; }
+.site-header--home .home-brand-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-block: .9rem;
+}
+.site-header--home .brand-mark { height: 50px; }
+.site-header--home .brand-divider,
+.site-header--home .brand-name { display: none; }
+.home-group-name {
+  margin: 0;
+  color: #fff;
+  font-family: Archivo, sans-serif;
+  font-size: clamp(1.05rem, 2vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -.01em;
+  line-height: 1.2;
+  text-align: right;
+}
+.home-group-name span {
+  display: block;
+  margin-top: .28rem;
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  font-size: .68em;
+  font-weight: 400;
+}
+.site-header--home .home-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-top: 1px solid rgba(255,255,255,.18);
+  padding-block: .5rem;
+}
+.site-header--home .site-nav a { color: rgba(255,255,255,.84); border-bottom-color: transparent; }
+.site-header--home .site-nav a:hover,
+.site-header--home .site-nav a[aria-current="page"] { color: #fff; border-bottom-color: #fff; }
+.site-header--home .nav-toggle { color: #fff; border-color: rgba(255,255,255,.5); }
+@media (max-width: 860px) {
+  .site-header--home .home-brand-bar { gap: 1rem; }
+  .site-header--home .brand-mark { height: 38px; }
+  .home-group-name { font-size: 1rem; }
+}
+@media (max-width: 560px) {
+  .site-header--home .brand-mark { height: 30px; }
+  .home-group-name span { display: none; }
+}
