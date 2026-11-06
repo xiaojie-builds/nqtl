@@ -424,6 +424,9 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
   grid-template-columns: minmax(0, 1fr);
   gap: 1.35rem;
 }
+/* The centred group headings already carry their own divider; a second
+   full-width border on every section reads as a duplicate rule. */
+.page-instruments .section { border-top: 0; }
 .page-instruments .section-grid {
   grid-template-columns: minmax(0, 1fr);
   gap: 2rem;
