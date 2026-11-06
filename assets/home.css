@@ -209,9 +209,15 @@
 .site-header--home .home-brand-bar {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 2.75rem;
+  justify-content: space-between;
+  gap: 2rem;
   padding-block: .9rem;
+}
+.home-identities {
+  display: flex;
+  align-items: center;
+  gap: 2.75rem;
+  min-width: 0;
 }
 .site-header--home .brand-mark { height: 50px; }
 .site-header--home .brand-divider,
@@ -232,13 +238,6 @@
   font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
   font-size: .68em;
   font-weight: 400;
-}
-.site-header--home .home-nav-bar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  border-top: 1px solid rgba(255,255,255,.18);
-  padding-block: .5rem;
 }
 .site-header--home .site-nav a { color: rgba(255,255,255,.84); border-bottom-color: transparent; }
 .site-header--home .site-nav a:hover,
