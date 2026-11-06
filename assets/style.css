@@ -1150,7 +1150,7 @@ img/* height stays out of this rule so the 4:3 aspect-ratio wins; align-self
 
 .abbr {
   font-weight: 400;
-  color: var(--mute);
+  color: var(--accent);
 }
 
 .footer-name {
