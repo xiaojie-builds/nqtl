@@ -148,8 +148,8 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
   position: sticky;
   top: 0;
   z-index: 30;
-  background: var(--paper);
-  border-bottom: 1px solid var(--rule);
+  background: #004098;
+  border-bottom: 1px solid rgba(255,255,255,.18);
 }
 
 .site-header .wrap {
@@ -165,7 +165,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
   align-items: center;
   gap: 0.9rem;
   text-decoration: none;
-  color: var(--ink);
+  color: #fff;
 }
 .brand-mark {
   display: block;
@@ -178,10 +178,10 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
   height: 26px;
   background: var(--rule);
 }
-.brand:hover { color: var(--ink); }
+.brand:hover { color: #fff; }
 .brand-name {
   display: block;
-  color: var(--accent);
+  color: #fff;
   font-family: Archivo, sans-serif;
   font-weight: 600;
   font-size: 1.0625rem;
@@ -203,26 +203,26 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.005em;
-  color: var(--ink);
+  color: rgba(255,255,255,.84);
   text-decoration: none;
   padding-block: 0.35rem;
   border-bottom: 2px solid transparent;
 }
-.site-nav a:hover { color: var(--accent); border-bottom-color: var(--rule-strong); }
-.site-nav a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
+.site-nav a:hover { color: #fff; border-bottom-color: #fff; }
+.site-nav a[aria-current="page"] { color: #fff; border-bottom-color: #fff; }
 
 .nav-toggle {
   display: none;
   font-family: Archivo, sans-serif;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--ink);
+  color: #fff;
   background: none;
-  border: 1px solid var(--rule-strong);
+  border: 1px solid rgba(255,255,255,.5);
   padding: 0.45rem 0.8rem;
   cursor: pointer;
 }
-.nav-toggle:hover { border-color: var(--ink); }
+.nav-toggle:hover { border-color: #fff; }
 
 @media (max-width: 860px) {
   .site-header .wrap { flex-wrap: wrap; gap: 0.75rem; }
@@ -238,13 +238,13 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
     gap: 0;
     padding-bottom: 0.75rem;
   }
-  .site-nav li { width: 100%; border-top: 1px solid var(--rule); }
+  .site-nav li { width: 100%; border-top: 1px solid rgba(255,255,255,.18); }
   .site-nav a {
     display: block;
     padding-block: 0.7rem;
     border-bottom: 0;
   }
-  .site-nav a[aria-current="page"] { color: var(--accent); }
+  .site-nav a[aria-current="page"] { color: #fff; }
 }
 
 /* ---------- hero (home) ---------- */
@@ -1224,7 +1224,4 @@ img/* height stays out of this rule so the 4:3 aspect-ratio wins; align-self
   .brand-mark { height: 27px; }
   .brand-divider { display: none; }
   .brand-name { font-size: 0.9375rem; }
-}
-@media (max-width: 380px) {
-  .brand-name { display: none; }
 }
