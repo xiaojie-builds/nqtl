@@ -157,7 +157,7 @@
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity .55s ease;
+  transition: opacity .4s ease;
 }
 .hc-slide.is-active { opacity: 1; }
 .hc-slide:nth-child(1) { background: linear-gradient(115deg, #16305A, #2E5E9E 55%, #5C8CC4); }
