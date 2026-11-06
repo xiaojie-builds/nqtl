@@ -711,6 +711,9 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
   font-size: 1rem;
   line-height: 1.6;
   color: #2A2E31;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .profile-role {
@@ -859,6 +862,9 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
   line-height: 1.5;
   color: var(--mute);
   margin: 0;
+  /* The bio sits in a ~260px column beside the portrait; justifying it
+     opens gaps between words that read worse than a ragged edge. */
+  text-align: left;
 }
 
 /* ---------- media placeholders ---------- */
@@ -941,8 +947,9 @@ img/* height stays out of this rule so the 4:3 aspect-ratio wins; align-self
   line-height: 1.55;
   max-width: 62ch;
   color: #2A2E31;
-  text-align: left;
-  hyphens: manual;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .instrument-links {
