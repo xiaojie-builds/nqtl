@@ -12,7 +12,7 @@
   font-size: .75rem;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: #8a8a86;
+  color: var(--mute);
   margin: 0 0 1rem;
 }
 .home-h1 {
@@ -30,7 +30,7 @@
   letter-spacing: inherit;
   white-space: nowrap;
 }
-.home-affil { font-size: .95rem; color: #6d6b66; margin: 0 0 1.4rem; }
+.home-affil { font-size: .95rem; color: var(--mute); margin: 0 0 1.4rem; }
 .home-lead {
   max-width: 62ch;
   font-size: 1.06rem;
@@ -48,6 +48,16 @@
   padding-top: 3.5rem;
   padding-bottom: 4rem;
 }
+/* Homepage reduced to a single column of copy. */
+.home-grid--solo { grid-template-columns: minmax(0, 1fr); }
+/* Full-width justified copy: the column runs to the right edge, so the */
+/* ragged left-over space disappears. */
+.home-grid--solo .home-section p {
+  max-width: none;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
 @media (max-width: 980px) {
   .home-grid { grid-template-columns: 1fr; gap: 3rem; }
 }
@@ -60,7 +70,7 @@
   font-size: .78rem;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: #8a8a86;
+  color: var(--mute);
   font-weight: 600;
   margin: 0 0 1.1rem;
 }
@@ -74,7 +84,7 @@
 }
 .research-item h3 a { color: #17160f; text-decoration: none; }
 .research-item h3 a:hover { text-decoration: underline; text-underline-offset: 3px; }
-.research-item p { font-size: .95rem; line-height: 1.6; color: #4d4b45; margin: 0; max-width: 66ch; }
+.research-item p { font-size: .95rem; line-height: 1.6; color: var(--mute); margin: 0; max-width: 66ch; }
 
 .home-more {
   font-family: Archivo, sans-serif;
@@ -93,7 +103,7 @@
   font-size: .78rem;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: #8a8a86;
+  color: var(--mute);
   margin: 0 0 .9rem;
 }
 .news-list { list-style: none; margin: 0; padding: 0; }
@@ -123,7 +133,7 @@
   padding: .95rem 1.1rem;
   background: #fbfaf7;
 }
-.hiring p { font-size: .9rem; line-height: 1.55; margin: 0 0 .5rem; color: #4d4b45; }
+.hiring p { font-size: .9rem; line-height: 1.55; margin: 0 0 .5rem; color: var(--mute); }
 .hiring p:last-child { margin-bottom: 0; }
 .hiring a { color: #1E4B8C; }
 

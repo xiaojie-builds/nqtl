@@ -27,7 +27,7 @@
 :root {
   --paper: #F7F8F6;
   --ink: #16181B;
-  --mute: #62686B;
+  --mute: #3A4043;
   --rule: #DCDFD9;
   --rule-strong: #C4C8C1;
   --accent: #1E4B8C;
@@ -92,6 +92,10 @@ sub { bottom: -0.22em; }
 sup { top: -0.42em; }
 
 a { color: inherit; text-decoration-color: var(--rule-strong); text-underline-offset: 0.18em; }
+/* Addresses read as plain text everywhere; underline appears on hover. */
+a[href^="mailto:"] { text-decoration: none; }
+a[href^="mailto:"]:hover,
+a[href^="mailto:"]:focus-visible { text-decoration: underline; text-decoration-color: var(--accent); color: var(--accent); }
 a:hover { text-decoration-color: var(--accent); color: var(--accent); }
 
 ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
@@ -480,7 +484,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 }
 
 /* Year groups sit close together; the stacked section padding was too airy. */
-.page-publications .section { padding-block: 1.4rem 1.9rem; }
+.page-publications .section { padding-block: 0.65rem 0.85rem; }
 
 .section-label--year {
   color: var(--accent);
@@ -573,7 +577,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
   font-family: Archivo, sans-serif;
   font-size: 0.9375rem;
   line-height: 1.5;
-  color: var(--mute);
+  color: #1F2325;          /* near-black: grey was hard to read at 15px */
   margin: 0;
 }
 
@@ -826,6 +830,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 .person--feature .person-meta {
   font-family: Archivo, sans-serif;
   font-size: 0.8125rem;
+  color: #1F2325;          /* near-black: the grey version was too faint */
   margin-top: 0.85rem;
 }
 
@@ -992,11 +997,21 @@ img/* height stays out of this rule so the 4:3 aspect-ratio wins; align-self
   max-width: 720px;
   background: #FFFFFF;
   border: 1px solid #E3E6E0;
-  border-left: 3px solid var(--accent);
   border-radius: 4px;
   padding: 1.6rem 1.75rem;
 }
 .contact-panel + .contact-panel { margin-top: 1.25rem; }
+/* Contact rows read as plain text; underline only on hover/focus. */
+.contact-table a {
+  text-decoration: none;
+  color: inherit;
+}
+.contact-table a:hover,
+.contact-table a:focus-visible {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+}
 .contact-panel--wide { margin-top: 1.25rem; }
 .panel-title {
   font-size: 1rem;
@@ -1282,4 +1297,39 @@ img/* height stays out of this rule so the 4:3 aspect-ratio wins; align-self
   .page-research .page-head .intro {
     text-align: left;
   }
+}
+
+/* ---------- contacts / research: same single-sided spacing ---------- */
+/* Sections carry padding on both sides; between two of them the two halves */
+/* add up to a 137px dead band. Keep only the bottom half.                  */
+.page-contacts .section,
+.page-research .section { padding-block: 0 clamp(2rem, 2.8vw, 2.5rem); }
+
+/* ---------- members: tighter vertical rhythm ---------- */
+/* Each section carried a full --section-pad top and bottom, so consecutive */
+/* blocks sat ~137px apart. Halve the stack for this page.                 */
+.page-members .section { padding-block: 0 clamp(2rem, 2.6vw, 2.5rem); }
+
+/* ---------- alumni ---------- */
+#alumni.section {
+  /* last block on the page: the footer already adds its own top margin, */
+  /* so a full section padding here stacks up into a dead band of white.  */
+  padding-bottom: 0;
+}
+.alumni-list { list-style: none; margin: 0; padding: 0; }
+.alumni-list li { padding: 0.85rem 0; border-top: 1px solid var(--rule); }
+.alumni-list li:first-child { border-top: 0; padding-top: 0; }
+.alumni-name {
+  display: block;
+  font-family: Archivo, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.alumni-where {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--mute);
 }
