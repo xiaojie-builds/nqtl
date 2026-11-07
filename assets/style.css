@@ -563,7 +563,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 0.15rem 1.5rem;
-  padding-block: 0.7rem;
+  padding-block: 0.5rem;
   border-top: 1px solid var(--rule);
 }
 .entry:first-child { border-top: 0; padding-top: 0; }
@@ -571,7 +571,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 .entry-authors {
   grid-column: 1;
   font-family: Archivo, sans-serif;
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   line-height: 1.5;
   color: var(--mute);
   margin: 0;
@@ -794,7 +794,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 .person--feature {
   grid-column: auto;
   display: grid;
-  grid-template-columns: clamp(140px, 34%, 190px) minmax(0, 1fr);
+  grid-template-columns: clamp(130px, 30%, 168px) minmax(0, 1fr);
   gap: clamp(1rem, 2vw, 1.5rem);
   align-items: start;
 }
@@ -818,6 +818,9 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
   color: #2A2E31;
   max-width: 62ch;
   margin-top: 0.6rem;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .person--feature .person-meta {
@@ -1134,9 +1137,25 @@ img/* height stays out of this rule so the 4:3 aspect-ratio wins; align-self
   margin-bottom: 0.75rem;
 }
 
-.theme .prose { margin-bottom: 1.5rem; max-width: 540px; }
+.theme .prose { margin-bottom: 1.5rem; max-width: 100%; }
+.theme .prose p { max-width: none; }
+/* Justified body copy across the research directions. */
+.theme .prose p,
+.page-research .page-head .intro {
+  text-align: justify;
+  max-width: 100%;   /* match the width of the direction copy below */
+  text-justify: inter-word;
+  hyphens: auto;
+}
 
-.theme-figure { max-width: 540px; }
+.theme-figure { max-width: 100%; margin: 1.5rem 0 0; }
+.theme-figure a { display: block; }
+.theme-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+}
 
 /* ---------- teaching ---------- */
 
