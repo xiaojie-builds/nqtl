@@ -1271,3 +1271,15 @@ img/* height stays out of this rule so the 4:3 aspect-ratio wins; align-self
   .brand-divider { display: none; }
   .brand-name { font-size: 0.9375rem; }
 }
+
+/* Justified text only works with a wide measure; below this width the word
+   gaps open up badly, so fall back to a ragged right edge. */
+@media (max-width: 700px) {
+  .entry-title,
+  .person-bio,
+  .pi-bio,
+  .theme .prose p,
+  .page-research .page-head .intro {
+    text-align: left;
+  }
+}
