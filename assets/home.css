@@ -316,3 +316,6 @@ body:has(.home-grid--solo) .site-footer { margin-top: 2.5rem; }
 .hc-arrow:hover { background: rgba(6,18,34,.58); }
 .hc-arrow:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 .hc-arrow svg { width: 20px; height: 20px; display: block; }
+
+/* body column matches the carousel width */
+.home-grid { max-width: 820px; margin-inline: auto; }
