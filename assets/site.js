@@ -43,6 +43,11 @@
   dots.forEach(function (d, k) {
     d.addEventListener('click', function () { show(k); start(); });
   });
+
+  var prev = root.querySelector('.hc-prev');
+  var next = root.querySelector('.hc-next');
+  if (prev) prev.addEventListener('click', function () { show(i - 1); start(); });
+  if (next) next.addEventListener('click', function () { show(i + 1); start(); });
   root.addEventListener('mouseenter', stop);
   root.addEventListener('mouseleave', start);
   root.addEventListener('focusin', stop);
