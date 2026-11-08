@@ -1425,8 +1425,9 @@ body:has(.home-grid--solo) .site-footer { margin-top: 1.5rem; }
 
 /* opening page: lead, bullet list, how to apply */
 .opening { max-width: 70ch; margin: 0; }
-.opening-lead { font-size: 1.0625rem; line-height: 1.65; margin: 0 0 1.4rem; }
-.opening h2 { font-size: 1rem; font-weight: 600; color: var(--accent); margin: 1.3rem 0 0.5rem; }
+.opening-lead { font-size: 1.0625rem; line-height: 1.65; margin: 0 0 0.7rem; }
+.opening h2 { font-size: 1rem; font-weight: 600; color: var(--accent); margin: 1rem 0 0.4rem; }
 .opening-list { margin: 0; padding-left: 1.1rem; }
 .opening-list li { line-height: 1.6; margin-bottom: 0.25rem; }
 .opening-list li::marker { content: "○  "; color: var(--mute); }
+.pi-contact p, .pi-contact a { font-size: 0.9375rem; color: #2A2E31; }
