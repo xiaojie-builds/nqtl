@@ -172,16 +172,6 @@
   transition: opacity .55s ease;
 }
 .hc-slide.is-active { opacity: 1; }
-.hc-slide:nth-child(1) { background: linear-gradient(115deg, #16305A, #2E5E9E 55%, #5C8CC4); }
-.hc-slide:nth-child(2) { background: linear-gradient(115deg, #1B3A63, #2B5A8C 55%, #4E82B4); }
-.hc-slide:nth-child(3) { background: linear-gradient(115deg, #12253F, #1E4B8C 55%, #3A6FB0); }
-.hc-slide::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 78% 28%, rgba(255,255,255,.16), transparent 46%),
-              repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 72px);
-}
 .hc-caption {
   position: absolute;
   left: 1.5rem;
@@ -273,3 +263,32 @@
 
 /* Homepage ends tighter than content pages. */
 body:has(.home-grid--solo) .site-footer { margin-top: 2.5rem; }
+
+/* real photographs replace the gradient placeholders */
+.hc-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hc-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(6,18,34,.72), rgba(6,18,34,.10) 46%, transparent 70%);
+}
+.hc-text {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1.1rem;
+  z-index: 2;
+  color: #fff;
+  font-family: Archivo, sans-serif;
+  font-size: .9rem;
+  line-height: 1.45;
+  text-shadow: 0 1px 8px rgba(0,0,0,.45);
+  max-width: 46ch;
+}
+.hc-text strong { display: block; font-weight: 600; }
+.hc-text .hc-sub { display: block; opacity: .82; font-size: .82rem; }

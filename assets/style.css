@@ -59,7 +59,7 @@ body {
   /* Times New Roman before Georgia on purpose: Georgia defaults to old-style
      figures, so if the webfont ever fails the numbers would sink below the
      baseline while the letters stay put */
-  font-family: "Source Serif 4", "Times New Roman", Georgia, serif;
+  font-family: Archivo, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.62;
   font-optical-sizing: auto;
@@ -583,7 +583,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 
 .entry-title {
   grid-column: 1;
-  font-family: "Source Serif 4", Georgia, serif;
+  font-family: Archivo, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 1.0625rem;
   font-weight: 400;
   line-height: 1.45;
@@ -736,7 +736,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 .contact-list {
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr);
-  gap: 0.4rem 1.25rem;
+  gap: 0.35rem 0.45rem;
   margin: 1.5rem 0 0;
   font-family: Archivo, sans-serif;
   font-size: 0.9375rem;
@@ -821,7 +821,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 }
 
 .person--feature .person-bio {
-  font-family: "Source Serif 4", Georgia, serif;
+  font-family: Archivo, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 0.9375rem;
   line-height: 1.62;
   color: #2A2E31;
@@ -1000,10 +1000,10 @@ img/* height stays out of this rule so the 4:3 aspect-ratio wins; align-self
 .contact-side { display: grid; gap: 1.25rem; }
 .contact-panel {
   max-width: 720px;
-  background: #FFFFFF;
-  border: 1px solid #E3E6E0;
-  border-radius: 4px;
-  padding: 1.6rem 1.75rem;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
 }
 .contact-panel + .contact-panel { margin-top: 1.25rem; }
 /* Contact rows read as plain text; underline only on hover/focus. */
@@ -1027,11 +1027,8 @@ img/* height stays out of this rule so the 4:3 aspect-ratio wins; align-self
 }
 .contact-table {
   display: grid;
-  grid-template-columns: 112px minmax(0, 1fr);
-  gap: 0.8rem 1.25rem;
-  margin: 0;
-  font-size: 0.9375rem;
-  line-height: 1.55;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.35rem;
 }
 .contact-table dt {
   font-family: Archivo, sans-serif;
@@ -1210,7 +1207,7 @@ img/* height stays out of this rule so the 4:3 aspect-ratio wins; align-self
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem clamp(2rem, 4vw, 3.5rem);
 }
 
@@ -1340,19 +1337,77 @@ main > section.section:last-of-type { padding-bottom: 0; }
   padding-bottom: 0;
 }
 .alumni-list { list-style: none; margin: 0; padding: 0; }
-.alumni-list li { padding: 0.85rem 0; border-top: 0; }
-.alumni-list li:first-child { border-top: 0; padding-top: 0; }
+/* one entry per line, name then address — fewer lines, more people on screen */
+.alumni-list li { padding: 0.3rem 0; }
+.alumni-list li:first-child { padding-top: 0; }
 .alumni-name {
-  display: block;
+  display: inline;
   font-family: Archivo, sans-serif;
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--accent);
 }
 .alumni-where {
-  display: block;
-  margin-top: 0.2rem;
+  display: inline;
   font-size: 0.875rem;
   line-height: 1.5;
   color: var(--mute);
 }
+
+/* ---------- feedback round: flatter surfaces, numbered research themes ---------- */
+.page-research { counter-reset: theme; }
+.page-research .theme { counter-increment: theme; }
+.page-research .theme h2::before {
+  content: counter(theme, decimal-leading-zero);
+  color: var(--mute);
+  font-variant-numeric: tabular-nums;
+  margin-right: 0.8rem;
+}
+
+.page-publications .section-grid { grid-template-columns: minmax(0, 1fr); gap: 0.4rem; }
+.page-publications .section-label--year { margin-bottom: 0; }
+
+/* instruments: pull the first group up under the title */
+.page-instruments .page-head { padding-bottom: 0.75rem; }
+.page-instruments .section:first-of-type { padding-top: 0; }
+
+.page-opening .join { background: none; padding: 0; }
+
+/* PI contact lines read as plain text, no column alignment */
+.pi-contact { margin-top: 1.1rem; }
+.pi-contact p { margin: 0; line-height: 1.6; }
+.pi-contact p + p { margin-top: 0.15rem; }
+
+/* ---------- global tightening pass: trim every stacked gap ---------- */
+.page-members .section,
+.page-contacts .section,
+.page-research .section,
+.page-publications .section { padding-bottom: clamp(1.1rem, 1.8vw, 1.5rem); }
+.page-instruments .section { padding-block: 0.25rem 1.5rem; }
+main > section.section:last-of-type { padding-bottom: 0; }
+.site-footer { margin-top: 2rem; }
+body:has(.home-grid--solo) .site-footer { margin-top: 1.5rem; }
+.prose p + p { margin-top: 0.55rem; }
+.people-grid { gap: 1.5rem 1.25rem; }
+.person-bio { margin-top: 0.4rem; }
+.person-meta { margin-top: 0.45rem; }
+.pi-contact { margin-top: 0.8rem; }
+.pi-bio { margin-top: 0.8rem; }
+.theme-figure { margin-top: 1rem; }
+.instrument-list { gap: 1rem; }
+
+/* research themes: tighter blocks */
+.page-research .theme { padding-block: 1.4rem; }
+.page-research .theme:first-of-type { padding-top: 0; }
+.page-research .theme h2 { margin-bottom: 0.5rem; }
+.page-research .prose p + p { margin-top: 0.45rem; }
+.page-research .theme-figure { margin-top: 0.85rem; }
+
+.page-research .page-head { padding-bottom: 0.5rem; }
+.page-research .page-head .intro { margin-bottom: 0; }
+.page-research .theme h2 { margin-top: 0; margin-bottom: 0.45rem; }
+.page-research .page-head { padding-bottom: 0; margin-bottom: 0; }
+.page-research .page-head .intro { margin: 0.4rem 0 0; }
+.page-research .section:first-of-type { padding-top: 0; }
+.page-research .theme:first-of-type { padding-top: 0.35rem; }
+.page-research .theme:first-of-type { padding-top: 0; margin-top: -0.4rem; }
