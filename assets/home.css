@@ -160,7 +160,7 @@
   position: relative;
   max-width: 1200px;
   margin: 1.75rem auto 0;
-  height: clamp(180px, 22vw, 270px);
+  height: clamp(260px, 34vw, 440px);
   overflow: hidden;
   border-radius: 4px;
   background: #16283F;
@@ -276,7 +276,7 @@ body:has(.home-grid--solo) .site-footer { margin-top: 2.5rem; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(6,18,34,.72), rgba(6,18,34,.10) 46%, transparent 70%);
+  background: linear-gradient(to top, rgba(6,18,34,.88) 0%, rgba(6,18,34,.62) 22%, rgba(6,18,34,.12) 52%, transparent 74%);
 }
 .hc-text {
   position: absolute;

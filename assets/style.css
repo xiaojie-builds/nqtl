@@ -729,7 +729,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
   font-family: Archivo, sans-serif;
   font-size: 0.9375rem;
   line-height: 1.55;
-  color: var(--mute);
+  color: #2A2E31;
   margin-top: 0.85rem;
 }
 
@@ -1359,7 +1359,7 @@ main > section.section:last-of-type { padding-bottom: 0; }
 .page-research .theme { counter-increment: theme; }
 .page-research .theme h2::before {
   content: counter(theme, decimal-leading-zero);
-  color: var(--mute);
+  color: var(--accent);
   font-variant-numeric: tabular-nums;
   margin-right: 0.8rem;
 }
@@ -1411,3 +1411,22 @@ body:has(.home-grid--solo) .site-footer { margin-top: 1.5rem; }
 .page-research .section:first-of-type { padding-top: 0; }
 .page-research .theme:first-of-type { padding-top: 0.35rem; }
 .page-research .theme:first-of-type { padding-top: 0; margin-top: -0.4rem; }
+
+/* PI affiliation and contact lines read as one block: same colour, same rhythm */
+.profile-role { line-height: 1.55; }
+.pi-contact { margin-top: 0.55rem; }
+.pi-contact p { line-height: 1.55; }
+.pi-contact p + p { margin-top: 0; }
+
+/* publications: centre the whole column so the right side is not empty */
+.page-publications .page-head,
+.page-publications .section-label--year { text-align: center; }
+.page-publications .entries { max-width: 70ch; margin-inline: auto; }
+
+/* opening page: lead, bullet list, how to apply */
+.opening { max-width: 70ch; margin: 0; }
+.opening-lead { font-size: 1.0625rem; line-height: 1.65; margin: 0 0 1.4rem; }
+.opening h2 { font-size: 1rem; font-weight: 600; color: var(--accent); margin: 1.3rem 0 0.5rem; }
+.opening-list { margin: 0; padding-left: 1.1rem; }
+.opening-list li { line-height: 1.6; margin-bottom: 0.25rem; }
+.opening-list li::marker { content: "○  "; color: var(--mute); }
