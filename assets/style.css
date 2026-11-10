@@ -693,7 +693,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
   display: grid;
   /* the PI portrait is the one image that deserves more than the 170px
      label column the rest of the page uses */
-  grid-template-columns: minmax(var(--label-col), 300px) minmax(0, 1fr);
+  grid-template-columns: minmax(var(--label-col), 390px) minmax(0, 1fr);
   gap: var(--label-gap);
   align-items: start;
   padding-bottom: var(--section-pad);
@@ -1167,7 +1167,7 @@ img/* height stays out of this rule so the 4:3 aspect-ratio wins; align-self
   hyphens: auto;
 }
 
-.theme-figure { max-width: 831px;   /* the supplied diagrams are 831px wide — never upscale */ margin: 1.5rem auto 0;   /* centre the diagram so the side gutters match */ }
+.theme-figure { max-width: 1100px;  /* new diagrams are 1100px wide — show them at native size */ margin: 1.5rem auto 0;   /* centre the diagram so the side gutters match */ }
 .theme-figure a { display: block; }
 .theme-figure img {
   display: block;
@@ -1637,12 +1637,12 @@ main > .section:first-of-type,
 .person--feature .person-meta { margin-top: 0.6rem; }
 
 /* PI block: photo left, text right, tops aligned */
-.profile { align-items: start; gap: 2rem; }
-.ph-wrap { max-width: 330px; }
-.ph-wrap img { aspect-ratio: 3 / 4; }
+.profile { align-items: start; gap: 1.1rem; }
+.ph-wrap { max-width: none; }
+.ph-wrap img { aspect-ratio: 4 / 5; }
 .pi-name { font-size: 1.5rem; letter-spacing: -0.01em; margin: 0 0 0.5rem; line-height: 1.2; }
 .profile-role { font-size: 0.9375rem; line-height: 1.5; margin-top: 0; }
-.pi-contact { margin-top: 0.6rem; }
+.pi-contact { margin-top: 0.2rem; }
 .pi-bio { margin-top: 0.9rem; max-width: none; line-height: 1.62; }
 
 /* member photos: four to a row instead of two */
@@ -1673,3 +1673,56 @@ main > .section:first-of-type,
 /* PI copy reads larger on wide screens */
 .pi-bio { font-size: 1rem; line-height: 1.68; }
 .profile-role, .pi-contact p, .pi-contact a { font-size: 0.9688rem; }
+
+/* PI block: contact lines and bio follow the address with no gaps */
+.pi-contact { margin-top: 0; }
+.pi-contact p { margin: 0; line-height: 1.45; }
+.pi-contact p + p { margin-top: 0; }
+.pi-bio { margin-top: 0.15rem; }
+
+.profile-role { margin: 0; line-height: 1.45; }
+.pi-contact, .pi-contact p, .pi-contact p + p { margin: 0; }
+.pi-bio { margin-top: 0.1rem; }
+
+/* footer: contact block on the left, outbound links on the right */
+body > .site-footer {
+  background: #0C1B2E;
+  color: rgba(255, 255, 255, 0.72);
+  margin-top: 3rem;
+  padding: 2.6rem 0 1.1rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 2rem 4rem;
+  align-items: start;
+}
+.footer-title {
+  margin: 0 0 0.9rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+.footer-list { list-style: none; margin: 0; padding: 0; font-size: 0.875rem; line-height: 1.62; }
+.footer-list li + li { margin-top: 0.75rem; }
+.footer-list a { color: rgba(255, 255, 255, 0.78); text-decoration: none; border-bottom: 1px solid transparent; }
+.footer-list a:hover, .footer-list a:focus-visible { color: #fff; border-bottom-color: rgba(255,255,255,0.6); }
+.footer-list--links li { position: relative; padding-left: 0.85rem; }
+.footer-list--links li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,0.45); }
+.footer-bottom {
+  margin-top: 1.9rem;
+  padding-top: 0.95rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.footer-bottom p { margin: 0; font-size: 0.8125rem; color: rgba(255, 255, 255, 0.5); text-align: center; }
+@media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr; gap: 1.8rem; } }
+
+/* research figures: show at native 1100px, centred */
+.page-research .theme figure, .page-research .theme a { max-width: 1100px; margin-inline: auto; }
+.page-research .theme img { width: 100%; height: auto; }
+
+/* research: paragraphs run on, no gaps between them */
+.page-research .theme p { margin: 0; }
+.page-research .theme p + p { margin-top: 0; }
+.page-research .theme h2 + p { margin-top: 0.35rem; }
