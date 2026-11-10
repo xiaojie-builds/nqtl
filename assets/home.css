@@ -319,3 +319,6 @@ body:has(.home-grid--solo) .site-footer { margin-top: 2.5rem; }
 
 /* body column matches the carousel width */
 .home-grid { max-width: none; }
+
+/* section label reads as a sentence, not a tag */
+.home-section h2 { text-transform: none; letter-spacing: 0; font-size: 0.95rem; font-weight: 700; }

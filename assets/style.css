@@ -1619,3 +1619,36 @@ main > .section:first-of-type,
 /* research figures stay centred inside the wider text column */
 .page-research .theme figure,
 .page-research .theme img { margin-inline: auto; }
+
+/* PI card uses the same stacked layout as every other member */
+.person--feature {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+.person--feature.person--upright { align-items: start; }
+.person--feature img { max-width: none; width: 100%; }
+.person--feature h3 { margin-top: 0; font-size: 1rem; }
+.person--feature .person-bio {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  max-width: none;
+  margin-top: 0.5rem;
+}
+.person--feature .person-meta { margin-top: 0.6rem; }
+
+/* PI block: photo left, text right, tops aligned */
+.profile { align-items: start; gap: 2rem; }
+.ph-wrap { max-width: 240px; }
+.ph-wrap img { aspect-ratio: 3 / 4; }
+.pi-name { font-size: 1.5rem; letter-spacing: -0.01em; margin: 0 0 0.5rem; line-height: 1.2; }
+.profile-role { font-size: 0.9375rem; line-height: 1.5; margin-top: 0; }
+.pi-contact { margin-top: 0.6rem; }
+.pi-bio { margin-top: 0.9rem; max-width: 82ch; line-height: 1.62; }
+
+/* member photos: four to a row instead of two */
+.people-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem 1.5rem; }
+@media (max-width: 1100px) { .people-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 860px) { .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* nav labels a notch larger */
+.site-nav a { font-size: 1rem; }
