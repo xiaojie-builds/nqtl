@@ -34,7 +34,7 @@
   --accent-soft: #E7EEF9;
   --photo: #E6E8E2;
 
-  --wrap: 1120px;
+  --wrap: 70rem;
   --gutter: 2rem;
   --label-col: 170px;
   --label-gap: clamp(1.5rem, 4vw, 3.5rem);
@@ -48,6 +48,7 @@
 *::after { box-sizing: border-box; }
 
 html {
+  font-size: clamp(100%, calc(76.25% + 0.35vw), 125%);
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: 5.5rem;
 }
