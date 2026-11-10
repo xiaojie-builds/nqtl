@@ -21,23 +21,26 @@
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
         <li><a href="index.html">Home</a></li>
+<li><a href="news.html">News</a></li>
         <li><a href="research.html">Research Areas</a></li>
         <li><a href="members.html">Members</a></li>
-        <li><a href="instruments.html" aria-current="page">Instruments</a></li>
+        <li class="nav-item nav-item--has-sub">
+          <a href="instruments.html" aria-current="page">Instruments</a>
+          <ul class="nav-sub">
+            <li><a href="instruments.html#materials">Materials growth</a></li>
+            <li><a href="instruments.html#fabrication">Micro- and nanofabrication</a></li>
+            <li><a href="instruments.html#characterization">Device characterization</a></li>
+          </ul>
+        </li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="opening.html">Opening</a></li>
-        <li><a href="contacts.html">Contacts</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
 <main id="main">
-  <div class="wrap page-head">
-    <h1>Instruments</h1>
-  </div>
-
-  <section class="section">
+  <section class="section" id="materials">
     <div class="wrap section-grid">
       <h2 class="section-label section-label--strong">Materials growth</h2>
       <div>
@@ -53,7 +56,7 @@
           <li class="instrument" data-instrument="cvd-thin-film">
             <img class="instrument-thumb" src="assets/instruments/cvd-thin-film.jpg" alt="Custom-built CVD system on an aluminum frame with a horizontal tube furnace and an Edwards pump" width="760" height="570" loading="lazy" decoding="async">
             <div class="instrument-body">
-              <h3>CVD Thin-Film Deposition System</h3>
+              <h3>CVD thin-film deposition system</h3>
               <p>Custom-built chemical vapor deposition system mounted on a modular aluminum frame, featuring a horizontal tube furnace with heated quartz process tube, gas delivery manifold with mass flow controllers, stainless steel vacuum lines, and an Edwards rotary vane pump integrated in the base cabinet. Suitable for thin-film growth and process development of semiconductor and functional materials in research environments.</p>
             </div>
           </li>
@@ -76,7 +79,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="fabrication">
     <div class="wrap section-grid">
       <h2 class="section-label section-label--strong">Micro- and nanofabrication</h2>
       <div>
@@ -106,7 +109,7 @@
           <li class="instrument" data-instrument="lesker-ebeam">
             <img class="instrument-thumb" src="assets/instruments/lesker-ebeam.jpg" alt="Kurt J. Lesker electron beam evaporation system with its control cabinet and water chiller" width="760" height="570" loading="lazy" decoding="async">
             <div class="instrument-body">
-              <h3>Kurt J. Lesker Electron Beam Evaporation System</h3>
+              <h3>Kurt J. Lesker electron beam evaporation system</h3>
               <p>High-vacuum electron beam evaporation deposition system by Kurt J. Lesker Company, featuring a stainless steel process chamber with multi-pocket e-beam gun and substrate rotation, rack-mounted control cabinet with touchscreen interface, and integrated recirculating water chiller. Suitable for thin-film deposition of metals and dielectrics in semiconductor, MEMS and optical coating applications.</p>
             </div>
           </li>
@@ -120,7 +123,7 @@
           <li class="instrument" data-instrument="harrick-plasma-cleaner">
             <img class="instrument-thumb" src="assets/instruments/harrick-plasma-cleaner.jpg" alt="Harrick Plasma PDC-002-HP plasma cleaner with the PLASMAFLO gas flow module stacked on top" width="760" height="570" loading="lazy" decoding="async">
             <div class="instrument-body">
-              <h3>Harrick Plasma PDC-002-HP Plasma Cleaner (with PLASMAFLO PDC-FMG-2)</h3>
+              <h3>Harrick Plasma PDC-002-HP plasma cleaner (with PLASMAFLO PDC-FMG-2)</h3>
               <p>Benchtop RF plasma cleaning system by Harrick Plasma, featuring an expandable plasma chamber with adjustable RF power levels (LOW/MED/HI), vacuum and pump controls, paired with the PLASMAFLO PDC-FMG-2 dual-channel gas flow module (oxygen/argon) for controlled process gas mixing. Widely used for surface activation, contaminant removal and hydrophilicity treatment of samples and microfluidic devices.</p>
             </div>
           </li>
@@ -136,7 +139,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="characterization">
     <div class="wrap section-grid">
       <h2 class="section-label section-label--strong">Device characterization</h2>
       <div>
@@ -152,28 +155,28 @@
           <li class="instrument" data-instrument="keysight-b1505a">
             <img class="instrument-thumb" src="assets/instruments/keysight-b1505a.jpg" alt="Keysight B1505A Power Device Analyzer / Curve Tracer" width="760" height="1013" loading="lazy" decoding="async">
             <div class="instrument-body">
-              <h3>Keysight B1505A Power Device Analyzer / Curve Tracer</h3>
+              <h3>Keysight B1505A power device analyzer / curve tracer</h3>
               <p>Precision benchtop solution for static characterization of power semiconductors, including SiC, GaN and IGBT devices. Supports measurements up to 10 kV / 1,500 A with high-resolution sourcing and detection of breakdown voltage, on-resistance, leakage current and gate characteristics. Equipped with the High Power Result Selector module; well-maintained and calibration-ready for laboratory and R&amp;D applications.</p>
             </div>
           </li>
           <li class="instrument" data-instrument="agilent-b1500a">
             <img class="instrument-thumb" src="assets/instruments/agilent-b1500a.jpg" alt="Agilent B1500A semiconductor device parameter analyzer showing the EasyEXPERT interface" width="500" height="377" loading="lazy" decoding="async">
             <div class="instrument-body">
-              <h3>Agilent B1500A Semiconductor Device Parameter Analyzer</h3>
+              <h3>Agilent B1500A semiconductor device parameter analyzer</h3>
               <p>All-in-one benchtop solution for semiconductor device characterization, with modular slots accommodating SMU, capacitance and pulse generator units. Delivers precision DC and C-V measurements from fA-level leakage to the high-current region, with the EasyEXPERT graphical interface for test setup and analysis. Covers I-V, C-V, pulsed and resistivity measurements for device evaluation and materials research.</p>
             </div>
           </li>
           <li class="instrument" data-instrument="cryo-vacuum-probe-station">
             <img class="instrument-thumb" src="assets/instruments/cryo-vacuum-probe-station.jpg" alt="Cryogenic vacuum probe station with a top-mounted microscope and radial feedthrough ports" width="367" height="335" loading="lazy" decoding="async">
             <div class="instrument-body">
-              <h3>Cryogenic Vacuum Probe Station</h3>
+              <h3>Cryogenic vacuum probe station</h3>
               <p>Vacuum cryogenic probe station featuring a stainless steel chamber with multiple radial feedthrough ports, top-mounted optical microscope/camera, and vibration-isolated base platform. Enables wafer-level DC and RF electrical characterization of semiconductor devices and materials under controlled low-temperature and vacuum environments, suitable for condensed matter physics and device research.</p>
             </div>
           </li>
           <li class="instrument" data-instrument="agilent-dsa90804a">
             <img class="instrument-thumb" src="assets/instruments/agilent-dsa90804a.jpg" alt="Agilent Infiniium DSA90804A digital signal analyzer displaying four signal traces" width="721" height="543" loading="lazy" decoding="async">
             <div class="instrument-body">
-              <h3>Agilent Infiniium DSA90804A Digital Signal Analyzer</h3>
+              <h3>Agilent Infiniium DSA90804A digital signal analyzer</h3>
               <p>High-performance 8 GHz bandwidth, 40 GSa/s real-time sampling oscilloscope with four analog channels, designed for high-speed signal integrity, jitter and timing analysis in advanced digital designs. Features Infiniium user interface with segmented memory and comprehensive trigger/probe support. Well-suited for laboratory characterization of high-speed serial, RF and clock signals.</p>
             </div>
           </li>

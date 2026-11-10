@@ -34,7 +34,7 @@
   --accent-soft: #E7EEF9;
   --photo: #E6E8E2;
 
-  --wrap: 70rem;
+  --wrap: 82rem;
   --gutter: 2rem;
   --label-col: 170px;
   --label-gap: clamp(1.5rem, 4vw, 3.5rem);
@@ -48,7 +48,7 @@
 *::after { box-sizing: border-box; }
 
 html {
-  font-size: clamp(100%, calc(76.25% + 0.35vw), 125%);
+  font-size: clamp(100%, calc(76.25% + 0.38vw), 132%);
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: 5.5rem;
 }
@@ -566,9 +566,10 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
 
 .entry {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 0.15rem 1.5rem;
-  padding-block: 0.5rem;
+  grid-template-columns: minmax(0, 68ch) auto;
+  justify-content: start;
+  gap: 0.15rem 1.75rem;
+  padding-block: 0.42rem;
   border-top: 1px solid var(--rule);
 }
 .entry:first-child { border-top: 0; padding-top: 0; }
@@ -1422,13 +1423,199 @@ body:has(.home-grid--solo) .site-footer { margin-top: 1.5rem; }
 /* publications: centre the whole column so the right side is not empty */
 .page-publications .page-head,
 .page-publications .section-label--year { text-align: center; }
-.page-publications .entries { max-width: 70ch; margin-inline: auto; }
+.page-publications .entries { max-width: none; }
 
 /* opening page: lead, bullet list, how to apply */
-.opening { max-width: 70ch; margin: 0; }
+.opening { max-width: none; }
 .opening-lead { font-size: 1.0625rem; line-height: 1.65; margin: 0 0 0.7rem; }
 .opening h2 { font-size: 1rem; font-weight: 600; color: var(--accent); margin: 1rem 0 0.4rem; }
 .opening-list { margin: 0; padding-left: 1.1rem; }
 .opening-list li { line-height: 1.6; margin-bottom: 0.25rem; }
 .opening-list li::marker { content: "○  "; color: var(--mute); }
 .pi-contact p, .pi-contact a { font-size: 0.9375rem; color: #2A2E31; }
+
+/* entries span the full column, but the text itself stays readable */
+.page-publications .entry-authors,
+.page-publications .entry-title,
+.page-publications .entry-venue { max-width: 68ch; }
+
+/* research: text column matches the figure width */
+.page-research .page-head,
+.page-research .page-head .wrap,
+.page-research .theme { max-width: none; }
+.page-research .section-grid { display: block; }
+
+/* instruments: category jump links */
+.instrument-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  margin: 0.9rem 0 1.6rem;
+  font-size: 0.9375rem;
+}
+.instrument-index a {
+  color: var(--mute);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px;
+}
+.instrument-index a:hover,
+.instrument-index a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* paper titles link to the publisher page */
+.page-publications .entry-title a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.page-publications .entry-title a:hover,
+.page-publications .entry-title a:focus-visible {
+  border-bottom-color: currentColor;
+}
+
+/* paper titles: heavier and darker so they read as the anchor of each entry */
+.page-publications .entry-title {
+  font-weight: 600;
+  color: #17427E;
+}
+
+/* news list */
+.news-list { list-style: none; margin: 0; padding: 0; }
+.news-list li {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.news-list li:first-child { padding-top: 0; }
+.news-date {
+  font-size: 0.875rem;
+  color: var(--mute);
+  font-variant-numeric: tabular-nums;
+}
+.news-body p { margin: 0; }
+
+/* pages now start with content (h1 removed) — give the header room */
+main > .section:first-of-type { padding-top: 3.25rem; }
+main > .section:first-of-type > .wrap > .instrument-index:first-child { margin-top: 0; }
+
+main > .section:first-of-type,
+.page-research main > .section:first-of-type,
+.page-instruments main > .section:first-of-type { padding-top: 3.25rem; }
+
+.page-instruments #materials { padding-top: 3.25rem; }
+
+/* contact block inside opening */
+.opening-h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 1.6rem 0 0.45rem;
+}
+.opening #contact { border-top: 1px solid var(--rule); margin-top: 1rem; }
+.opening-map { display: block; margin-top: 1.25rem; max-width: 42rem; }
+.opening-map img { width: 100%; height: auto; display: block; border-radius: 2px; }
+
+/* nav dropdown: Instruments → the three categories */
+.site-nav .nav-item--has-sub { position: relative; }
+.site-nav .nav-sub {
+  position: absolute;
+  top: 100%;
+  left: -1rem;
+  min-width: 15rem;
+  margin: 0;
+  padding: 0.4rem 0;
+  list-style: none;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  box-shadow: 0 8px 24px rgba(16, 30, 52, 0.14);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity .16s ease, transform .16s ease, visibility .16s;
+  z-index: 20;
+}
+.site-nav .nav-sub a {
+  display: block;
+  padding: 0.45rem 1rem;
+  color: #2A2E31;
+  font-size: 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-nav .nav-sub a:hover,
+.site-nav .nav-sub a:focus-visible { background: #F1F4F8; color: var(--accent); }
+.site-nav .nav-item--has-sub:hover .nav-sub,
+.site-nav .nav-item--has-sub:focus-within .nav-sub {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+@media (max-width: 860px) {
+  .site-nav .nav-sub {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: 0;
+    background: transparent;
+    padding: 0 0 0 1rem;
+  }
+  .site-nav .nav-sub a { color: inherit; padding: 0.3rem 0; }
+}
+.site-nav .nav-sub li { display: block; margin: 0; }
+.site-nav .nav-sub { width: max-content; min-width: 16rem; }
+
+.site-nav .nav-sub { display: block; }
+.site-nav .nav-sub li { width: auto; border-top: 0; }
+
+/* publications: tighten the year rule and the gap around it */
+.page-publications .section { padding-block: 0.35rem 0.55rem; }
+.page-publications .section-label--year {
+  margin: 0;
+  padding: 0.55rem 0 0.35rem;
+}
+.page-publications .entries { margin-top: 0; }
+.page-publications .entry { padding-block: 0.12rem; }
+
+/* publications: the column ends where the longest line ends, then centres */
+.page-publications .entries { max-width: none; }
+.page-publications .entry-authors,
+.page-publications .entry-title,
+.page-publications .entry-venue { max-width: none; }
+
+/* publication entries fill the full column width */
+.page-publications .entry { grid-template-columns: minmax(0, 1fr) auto; }
+.page-publications .entry-authors,
+.page-publications .entry-title,
+.page-publications .entry-venue { max-width: none; }
+
+/* publications and instruments start tight, they are lists not prose */
+.page-publications main > .section:first-of-type,
+.page-instruments main > .section:first-of-type,
+.page-instruments main > #materials { padding-top: 0.9rem; }
+
+/* year label: the glyph height, not a double-height line box */
+.page-publications .section-label--year {
+  line-height: 1.15;
+  padding: 0.06rem 0 0;
+}
+.page-publications .section { padding-block: 0.05rem 0.1rem; }
+
+/* instrument cards fill the column instead of stopping at 880px */
+.page-instruments .instrument { max-width: none; }
+.page-instruments .instrument-list { align-items: stretch; }
+.page-instruments .instrument-thumb { height: 260px; }
+
+/* instrument descriptions fill their column (the global 62ch cap is for prose pages) */
+.page-instruments .instrument-body p { max-width: none; }
+
+/* research figures stay centred inside the wider text column */
+.page-research .theme figure,
+.page-research .theme img { margin-inline: auto; }
