@@ -693,7 +693,7 @@ ul, ol { margin: 0 0 1em; padding-left: 1.15em; }
   display: grid;
   /* the PI portrait is the one image that deserves more than the 170px
      label column the rest of the page uses */
-  grid-template-columns: minmax(var(--label-col), 260px) minmax(0, 1fr);
+  grid-template-columns: minmax(var(--label-col), 300px) minmax(0, 1fr);
   gap: var(--label-gap);
   align-items: start;
   padding-bottom: var(--section-pad);
@@ -1638,12 +1638,12 @@ main > .section:first-of-type,
 
 /* PI block: photo left, text right, tops aligned */
 .profile { align-items: start; gap: 2rem; }
-.ph-wrap { max-width: 240px; }
+.ph-wrap { max-width: 330px; }
 .ph-wrap img { aspect-ratio: 3 / 4; }
 .pi-name { font-size: 1.5rem; letter-spacing: -0.01em; margin: 0 0 0.5rem; line-height: 1.2; }
 .profile-role { font-size: 0.9375rem; line-height: 1.5; margin-top: 0; }
 .pi-contact { margin-top: 0.6rem; }
-.pi-bio { margin-top: 0.9rem; max-width: 82ch; line-height: 1.62; }
+.pi-bio { margin-top: 0.9rem; max-width: none; line-height: 1.62; }
 
 /* member photos: four to a row instead of two */
 .people-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem 1.5rem; }
@@ -1652,3 +1652,24 @@ main > .section:first-of-type,
 
 /* nav labels a notch larger */
 .site-nav a { font-size: 1rem; }
+
+/* every member photo occupies the same box, so names line up across the row */
+.people-grid .person img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* member card: plain column layout so the gap after the photo is identical everywhere */
+.people-grid .person {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.9rem;
+}
+.people-grid .person img { align-self: flex-start; }
+.people-grid .person .person-body { min-height: 0; }
+
+/* PI copy reads larger on wide screens */
+.pi-bio { font-size: 1rem; line-height: 1.68; }
+.profile-role, .pi-contact p, .pi-contact a { font-size: 0.9688rem; }
