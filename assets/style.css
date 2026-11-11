@@ -1821,7 +1821,7 @@ body > .site-footer {
   line-height: 1.28;
   letter-spacing: -0.018em;
   margin-bottom: 0.85rem;
-  max-width: 34ch;
+  max-width: none;
 }
 .page-news .entry figure { margin: 0 0 1.35rem; max-width: 640px; }
 .page-news .entry img {
