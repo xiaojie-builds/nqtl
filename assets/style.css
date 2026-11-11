@@ -1768,3 +1768,11 @@ body > .site-footer {
   border-bottom: 0;
   text-decoration-color: rgba(255, 255, 255, 0.55);
 }
+
+/* member card: pin the email to the bottom so the four columns line up */
+.people-grid .person .person-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+.people-grid .person .person-meta { margin-top: auto; padding-top: 0.5rem; }
