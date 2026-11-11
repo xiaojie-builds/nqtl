@@ -1776,3 +1776,6 @@ body > .site-footer {
   flex: 1 1 auto;
 }
 .people-grid .person .person-meta { margin-top: auto; padding-top: 0.5rem; }
+
+/* PI bio separated from the contact block by one blank line */
+.pi-bio { text-indent: 0; margin-top: 1.7em; }
