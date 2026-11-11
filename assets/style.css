@@ -1708,8 +1708,8 @@ body > .site-footer {
 .footer-list li + li { margin-top: 0.75rem; }
 .footer-list a { color: rgba(255, 255, 255, 0.78); text-decoration: none; border-bottom: 1px solid transparent; }
 .footer-list a:hover, .footer-list a:focus-visible { color: #fff; border-bottom-color: rgba(255,255,255,0.6); }
-.footer-list--links li { position: relative; padding-left: 0.85rem; }
-.footer-list--links li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,0.45); }
+.footer-list--links li { position: relative; padding-left: 1.15rem; }
+.footer-list--links li::before { content: ""; position: absolute; left: 0; top: 0.58em; width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.55); }
 .footer-bottom {
   margin-top: 1.9rem;
   padding-top: 0.95rem;
