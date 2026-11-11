@@ -1240,8 +1240,8 @@ img/* height stays out of this rule so the 4:3 aspect-ratio wins; align-self
 
 .footer-links { list-style: none; margin: 0; padding: 0; }
 .footer-links li { margin-bottom: 0.35rem; }
-.site-footer a { text-decoration: none; color: var(--ink); }
-.site-footer a:hover { color: var(--accent); text-decoration: underline; text-decoration-color: var(--accent); }
+.site-footer a { text-decoration: none; color: rgba(255, 255, 255, 0.82); }
+.site-footer a:hover, .site-footer a:focus-visible { color: #fff; text-decoration: none; }
 
 .footer-base {
   display: flex;
@@ -1726,3 +1726,45 @@ body > .site-footer {
 .page-research .theme p { margin: 0; }
 .page-research .theme p + p { margin-top: 0; }
 .page-research .theme h2 + p { margin-top: 0.35rem; }
+
+/* footer contact rows: circular icon on the left, text on the right */
+.footer-contact { list-style: none; margin: 0; padding: 0; }
+.footer-contact li {
+  display: grid;
+  grid-template-columns: 2.1rem minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+  font-size: 0.875rem;
+  line-height: 1.62;
+}
+.footer-contact li + li { margin-top: 0.85rem; }
+.footer-ico {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85);
+}
+.footer-ico svg { width: 1.05rem; height: 1.05rem; display: block; }
+.footer-cn { color: rgba(255, 255, 255, 0.55); }
+.footer-contact a { color: rgba(255, 255, 255, 0.82); text-decoration: none; border-bottom: 1px solid transparent; }
+.footer-contact a:hover, .footer-contact a:focus-visible { color: #fff; border-bottom-color: rgba(255,255,255,0.55); }
+.footer-list--links a { font-size: 0.9375rem; }
+.site-footer { font-family: inherit; }
+
+/* footer links: underline hugs the text instead of a full-width border */
+.footer-contact a, .footer-list a {
+  border-bottom: 0;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+.footer-contact a:hover, .footer-contact a:focus-visible,
+.footer-list a:hover, .footer-list a:focus-visible {
+  border-bottom: 0;
+  text-decoration-color: rgba(255, 255, 255, 0.55);
+}
