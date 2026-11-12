@@ -1038,7 +1038,7 @@ img/* height stays out of this rule so the 4:3 aspect-ratio wins; align-self
   color: var(--mute);
   padding-top: 0.12rem;
 }
-.contact-table dd { margin: 0; color: #2A2E31; }
+.contact-table dd { margin: 0; color: var(--ink); }
 .contact-panel p {
   font-size: 0.9375rem;
   line-height: 1.62;
@@ -1432,7 +1432,7 @@ body:has(.home-grid--solo) .site-footer { margin-top: 1.5rem; }
 .opening-list { margin: 0; padding-left: 1.1rem; }
 .opening-list li { line-height: 1.6; margin-bottom: 0.25rem; }
 .opening-list li::marker { content: "○  "; color: var(--mute); }
-.pi-contact p, .pi-contact a { font-size: 0.9375rem; color: #2A2E31; }
+.pi-contact p, .pi-contact a { font-size: 0.9375rem; color: var(--ink); }
 
 /* entries span the full column, but the text itself stays readable */
 .page-publications .entry-authors,
@@ -1784,9 +1784,10 @@ body > .site-footer {
 .page-news .entries { padding-bottom: 3.5rem; }
 
 .page-news .entry {
+  --label-col: 58px;
   display: grid;
   grid-template-columns: var(--label-col) minmax(0, 1fr);
-  column-gap: var(--label-gap);
+  column-gap: 1.1rem;
   padding-block: 1.15rem;
   border-top: 1px solid var(--rule);
 }
@@ -1794,29 +1795,37 @@ body > .site-footer {
 .page-news .entry-date {
   align-self: start;
   justify-self: start;
-  width: 84px;
+  width: 100%;
+  max-width: 84px;
   padding: 0.62rem 0.4rem 0.55rem;
   background: var(--accent-soft);
   border-radius: 2px;
   text-align: center;
 }
-.page-news .entry-date .m {
-  display: block;
+.page-news .entry-date {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.page-news .entry-date .y {
   font-size: 1.0625rem;
   font-weight: 600;
   line-height: 1.2;
   color: var(--accent);
   letter-spacing: -0.01em;
+  margin-top: 0;
 }
-.page-news .entry-date .y {
-  display: block;
-  margin-top: 0.15rem;
+.page-news .entry-date .m {
   font-size: 0.8125rem;
-  color: var(--mute);
+  line-height: 1.3;
+  font-weight: 500;
+  color: var(--accent);
+  margin-top: 0.12rem;
+  opacity: 0.72;
 }
-
 .page-news .entry-body { min-width: 0; }
 .page-news .entry h2 {
+  color: var(--ink);
+  font-weight: 600;
   font-size: 1.5rem;
   line-height: 1.28;
   letter-spacing: -0.018em;
@@ -1837,7 +1846,7 @@ body > .site-footer {
   line-height: 1.5;
   color: var(--mute);
 }
-.page-news .entry p { font-size: 0.9375rem; line-height: 1.6; max-width: none; color: #2A2E31; }
+.page-news .entry p { font-size: 0.9375rem; line-height: 1.6; max-width: none; color: var(--ink); }
 .page-news .entry .tags {
   margin-top: 1.1rem;
   font-size: 0.75rem;
@@ -1899,3 +1908,22 @@ body > .site-footer {
 .page-news .page-head { margin-inline: auto; }
 .page-news .page-head .intro { margin-left: 0; max-width: 62ch; margin-bottom: 0; }
 .page-news .page-head { padding-bottom: 1.2rem; }
+
+/* opening: numbered research directions */
+.opening-list { counter-reset: dir; }
+.opening-list li {
+  counter-increment: dir;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: 0.65rem;
+}
+.opening-list li::before {
+  content: counter(dir, decimal-leading-zero);
+  font-family: Archivo, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  opacity: 0.7;
+}
