@@ -1927,3 +1927,9 @@ body > .site-footer {
   color: var(--ink);
 
 }
+
+/* research: indent the first line of every direction paragraph (two characters) */
+.page-research .theme .prose p {
+  text-indent: 2em;
+}
+.page-research .theme .prose p:first-child { text-indent: 2em; }
